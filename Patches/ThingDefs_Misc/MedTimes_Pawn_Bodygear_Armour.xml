@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="CombatExtended.PatchOperationFindMod">
+				<modName>Medieval Times</modName>
+			</li>
+			<!-- ========== Mass Stat Removal ========== -->
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_ArmourBase"]/statBases/Mass</xpath>
+			</li>
+			<!-- ========== Tier 0 Class ========== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_T0_L"]/statBases</xpath>
+				<value>
+					<Bulk>4</Bulk>
+					<WornBulk>2</WornBulk>
+					<Mass>4</Mass>
+				</value>
+			</li>
+			<!-- ========== Tier 1 Class (Light) ========== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_T1_L"]/statBases</xpath>
+				<value>
+					<Bulk>7</Bulk>
+					<WornBulk>3.5</WornBulk>
+					<Mass>7</Mass>
+				</value>
+			</li>
+			<!-- ========== Tier 1 Class (Heavy) ========== -->
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_T1_H"]/statBases/Mass</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_T1_H"]/statBases</xpath>
+				<value>
+					<Bulk>10</Bulk>
+					<WornBulk>5</WornBulk>
+					<Mass>10</Mass>
+				</value>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_T1_H"]/equippedStatOffsets</xpath>
+			</li>
+			<!-- ========== Tier 2 Class (Light) ========== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_T2_L"]/statBases</xpath>
+				<value>
+					<Bulk>6.5</Bulk>
+					<WornBulk>3</WornBulk>
+					<Mass>6</Mass>
+				</value>
+			</li>
+			<!-- ========== Tier 2 Class (Heavy) ========== -->
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_T2_H"]/statBases/Mass</xpath>
+			</li>
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_T2_H"]/statBases</xpath>
+				<value>
+					<Bulk>9</Bulk>
+					<WornBulk>4</WornBulk>
+					<Mass>9.5</Mass>
+				</value>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_T2_H"]/equippedStatOffsets</xpath>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

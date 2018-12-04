@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="CombatExtended.PatchOperationFindMod">
+				<modName>Medieval Times</modName>
+			</li>
+			<!-- ========== (Artifact) Foot Accessories ========== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_FootArmour_Nan"]/statBases</xpath>
+				<value>
+					<Bulk>3</Bulk>
+					<WornBulk>2.5</WornBulk>
+					<Mass>3</Mass>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

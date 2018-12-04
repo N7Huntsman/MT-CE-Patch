@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ========== Arrow and Bolts ========== -->
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>BodkinArrow</defName>
+		<label>Bodkin Arrow</label>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>BlackArrow</defName>
+		<label>Black Arrow</label>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>CrossbowBolt</defName>
+		<label>Bolt</label>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>FlamingBodkinArrow</defName>
+		<label>Flaming Bodkin Arrow</label>
+    <labelShort>flaming</labelShort>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>FlamingBlackArrow</defName>
+		<label>Flaming Black Arrow</label>
+    <labelShort>flaming</labelShort>
+	</CombatExtended.AmmoCategoryDef>
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>FlamingBolt</defName>
+		<label>Flaming Bolt</label>
+    <labelShort>flaming</labelShort>
+		<advanced>true</advanced>
+	</CombatExtended.AmmoCategoryDef>
+
+  <!-- ========== Medieval Artillery Ammo ========== -->
+
+	<CombatExtended.AmmoCategoryDef>
+		<defName>BallistaBolt</defName>
+		<label>Ballista Bolt</label>
+	</CombatExtended.AmmoCategoryDef>
+
+	 <!-- ========== Musket Balls ========== -->
+
+   <CombatExtended.AmmoCategoryDef>
+    <defName>RoundBall</defName>
+    <label>round ball</label>
+    <description>A loose fitting metal ball. Fairly innacurate due to poor aerodynamics, but inflicts large wounds due to the hitting power and large diameter of the projectile.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+</Defs>

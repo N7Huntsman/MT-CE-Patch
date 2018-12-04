@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- ========== Mass Stat Removal ========== -->
+	<!-- <Operation Class="PatchOperationRemove"> -->
+		<!-- <xpath>/Defs/ThingDef[@Name="MedTimes_Helmet"]/statBases/Mass</xpath> -->
+	<!-- </Operation> -->
+	<!-- ========== Tier 0 Class ========== -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T0_L"]/statBases</xpath>
+		<value>
+			<Bulk>1</Bulk>
+			<WornBulk>0.75</WornBulk>
+			<Mass>1</Mass>
+		</value>
+	</Operation>
+	<!-- ========== Tier 1 Class (Light) ========== -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T1_L"]/statBases</xpath>
+		<value>
+			<Bulk>2</Bulk>
+			<WornBulk>2</WornBulk>
+			<Mass>2</Mass>
+		</value>
+	</Operation>
+	<!-- ========== Tier 1 Class (Heavy) ========== -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T1_H"]/statBases</xpath>
+		<value>
+			<Bulk>3</Bulk>
+			<WornBulk>3</WornBulk>
+		</value>
+	</Operation>
+	<!-- ========== Tier 2 Class (Light) ========== -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T2_L"]/statBases</xpath>
+		<value>
+			<Bulk>2</Bulk>
+			<WornBulk>1</WornBulk>
+			<Mass>1.5</Mass>
+		</value>
+	</Operation>
+	<!-- ========== Tier 2 Class (Heavy) ========== -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T2_H"]/statBases</xpath>
+		<value>
+			<Bulk>3</Bulk>
+			<WornBulk>2</WornBulk>
+		</value>
+	</Operation>
+</Patch>

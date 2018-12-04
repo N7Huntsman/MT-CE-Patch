@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+  <!--  Headgear remove Mass  -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>/Defs/ThingDef[@Name="MedTimes_Headgear"]/statBases/Mass</xpath>
+  </Operation>
+  <!-- Headgear Base Class -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[@Name="MedTimes_Headgear"]/statBases</xpath>
+    <value>
+      <Bulk>1</Bulk>
+      <WornBulk>0.5</WornBulk>
+      <Mass>1</Mass>
+    </value>
+  </Operation>
+</Patch>

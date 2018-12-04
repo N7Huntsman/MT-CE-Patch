@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Defs>
+  <ThingDef Name="BaseBulletCMG" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/Charge_Small</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+  <ThingDef ParentName="BaseBulletCMG">
+    <defName>Projectile_Bullet_CMG</defName>
+    <label>CMG Bullet</label>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <speed>140</speed>
+      <damageAmountBase>13</damageAmountBase>
+      <armorPenetrationBase>0.4</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+</Defs>

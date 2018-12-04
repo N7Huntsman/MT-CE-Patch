@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="UnfinishedMT_Base" Abstract="True">
+    <thingClass>UnfinishedThing</thingClass>
+    <category>Item</category>
+    <label>unfinished thing</label>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedSculpture</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <altitudeLayer>Item</altitudeLayer>
+    <useHitPoints>true</useHitPoints>
+    <isUnfinishedThing>true</isUnfinishedThing>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <selectable>true</selectable>
+    <tradeability>None</tradeability>
+    <drawerType>RealtimeOnly</drawerType>
+    <!-- For CompForbiddable -->
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <DeteriorationRate>2.0</DeteriorationRate>
+      <Beauty>-4</Beauty>
+      <Mass>1</Mass> <!-- ingredients are added to this value -->
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+    <rotatable>false</rotatable>
+    <pathCost>15</pathCost>
+    <thingCategories>
+      <li>Unfinished</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="UnfinishedMT_Base">
+    <defName>UnfinishedMT_Ammo</defName>
+    <label>Unfinished ammo batch</label>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedComponent</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <stuffCategories />
+  </ThingDef>
+
+  <ThingDef ParentName="UnfinishedMT_Base">
+    <defName>UnfinishedMT_Arrows</defName>
+    <label>Unfinished arrow batch</label>
+    <graphicData>
+      <texPath>Things/Item/Unfinished/UnfinishedGun</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+  </ThingDef>
+
+</Defs>

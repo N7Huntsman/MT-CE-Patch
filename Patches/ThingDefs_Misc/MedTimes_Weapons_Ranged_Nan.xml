@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- START -->
+	<!-- ======== Ranged Weapon Classes ======== -->
+	<!-- ======= Non Tier Bows ====== -->
+	<!-- Composite Bow -->
+	<!-- /ce data/ -->
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>MedTimes_Ranged_Composite_Nan</defName>
+		<statBases>
+			<SightsEfficiency>0.75</SightsEfficiency>
+			<ShotSpread>1</ShotSpread>
+			<SwayFactor>2</SwayFactor>
+			<Bulk>3.00</Bulk>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Medieval_Arrow_Composite</defaultProjectile>
+			<warmupTime>1</warmupTime>
+			<range>29</range>
+			<soundCast>Bow_Small</soundCast>
+		</Properties>
+        <AmmoUser>
+          <ammoSet>AmmoSet_Arrow</ammoSet>
+        </AmmoUser>
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+	</Operation>
+	<!-- /tools/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Composite_Nan"]</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>limb</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.102</armorPenetration>
+					<linkedBodyPartsGroup>Base</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>nock</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.075</armorPenetration>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	<!-- /tags/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Composite_Nan"]</xpath>
+		<value>
+			<weaponTags>
+				<li>CE_Bow</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<!-- ======= Crafting Tier Bows ====== -->
+	<!-- Longbow -->
+	<!-- /ce data/ -->
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>MedTimes_Ranged_Longbow_Nan</defName>
+		<statBases>
+			<SightsEfficiency>0.8</SightsEfficiency>
+			<ShotSpread>0.6</ShotSpread>
+			<SwayFactor>2</SwayFactor>
+			<Bulk>6.00</Bulk>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Projectile_BodkinArrow</defaultProjectile>
+			<warmupTime>1</warmupTime>
+			<range>42</range>
+			<soundCast>Bow_Large</soundCast>
+		</Properties>
+        <AmmoUser>
+          <ammoSet>AmmoSet_BodkinArrows</ammoSet>
+        </AmmoUser>
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+	</Operation>
+	<!-- /tools/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Longbow_Nan"]</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>limb</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.102</armorPenetration>
+					<linkedBodyPartsGroup>Base</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>nock</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.075</armorPenetration>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	<!-- /tags/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Longbow_Nan"]</xpath>
+		<value>
+			<weaponTags>
+				<li>CE_Bow</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<!-- ======= Tier 1 Bows ====== -->
+	<!-- Crossbow -->
+	<!-- /ce data/ -->
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>MedTimes_Ranged_Crossbow_Nan</defName>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.5</ShotSpread>
+			<SwayFactor>2</SwayFactor>
+			<Bulk>7.50</Bulk>
+			<RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Projectile_CrossbowBolt</defaultProjectile>
+			<warmupTime>1</warmupTime>
+			<range>26</range>
+			<soundCast>Bow_Large</soundCast>
+		</Properties>
+        <AmmoUser>
+          <magazineSize>1</magazineSize>
+          <reloadTime>7</reloadTime>
+          <ammoSet>AmmoSet_CrossbowBolts</ammoSet>
+        </AmmoUser>
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+	</Operation>
+	<!-- /tools/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Crossbow_Nan"]</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>limb</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.102</armorPenetration>
+					<linkedBodyPartsGroup>Base</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>nock</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.075</armorPenetration>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	<!-- /tags/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Crossbow_Nan"]</xpath>
+		<value>
+			<weaponTags>
+				<li>CE_Bow</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<!-- Small Crossbow -->
+	<!-- /ce data/ -->
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>MedTimes_Ranged_HandCrossbow_Nan</defName>
+		<statBases>
+			<SightsEfficiency>0.9</SightsEfficiency>
+			<ShotSpread>0.5</ShotSpread>
+			<SwayFactor>1.2</SwayFactor>
+			<Bulk>4.5</Bulk>
+			<RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Projectile_CrossbowBolt</defaultProjectile>
+			<warmupTime>1</warmupTime>
+			<range>24</range>
+			<soundCast>Bow_Small</soundCast>
+		</Properties>
+        <AmmoUser>
+          <magazineSize>1</magazineSize>
+          <reloadTime>6</reloadTime>
+          <ammoSet>AmmoSet_CrossbowBolts</ammoSet>
+        </AmmoUser>
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+	</Operation>
+	<!-- /tools/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_HandCrossbow_Nan"]</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>limb</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.102</armorPenetration>
+					<linkedBodyPartsGroup>Base</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>nock</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.075</armorPenetration>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	<!-- /tags/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_HandCrossbow_Nan"]</xpath>
+		<value>
+			<weaponTags>
+				<li>CE_OneHandedWeapon</li>
+				<li>CE_Bow</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<!-- ======= Tier 2 Bows ====== -->
+	<!-- Arbalest -->
+	<!-- /ce data/ -->
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>MedTimes_Ranged_Arbalest_Nan</defName>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.4</ShotSpread>
+			<SwayFactor>1.4</SwayFactor>
+			<Bulk>9.00</Bulk>
+			<RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Projectile_CrossbowBolt</defaultProjectile>
+			<warmupTime>1</warmupTime>
+			<range>32</range>
+			<soundCast>Bow_Large</soundCast>
+		</Properties>
+        <AmmoUser>
+          <magazineSize>1</magazineSize>
+          <reloadTime>10</reloadTime>
+          <ammoSet>AmmoSet_CrossbowBolts</ammoSet>
+        </AmmoUser>
+        <FireModes>
+          <aiAimMode>AimedShot</aiAimMode>
+        </FireModes>
+	</Operation>
+	<!-- /tools/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Arbalest_Nan"]</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>limb</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.102</armorPenetration>
+					<linkedBodyPartsGroup>Base</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>nock</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.075</armorPenetration>
+					<linkedBodyPartsGroup>Point</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	<!-- /tags/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Arbalest_Nan"]</xpath>
+		<value>
+			<weaponTags>
+				<li>CE_Bow</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<!-- ======= Guns ====== -->
+	<!-- Smoothbore Musket -->
+	<!-- /ce data/ -->
+	<Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+		<defName>MedTimes_Ranged_Musket_Nan</defName>
+		<statBases>
+			<SightsEfficiency>1</SightsEfficiency>
+			<ShotSpread>0.2</ShotSpread>
+			<SwayFactor>1.92</SwayFactor>
+			<Bulk>8.5</Bulk>
+			<RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+		</statBases>
+		<Properties>
+			<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>Bullet_MusketBall</defaultProjectile>
+			<warmupTime>1</warmupTime>
+			<range>30</range>
+			<soundCast>MedTimes_Sound_MusketFire</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>9</muzzleFlashScale>
+		</Properties>
+		<AmmoUser>
+			<magazineSize>1</magazineSize>
+			<reloadTime>7</reloadTime>
+			<ammoSet>AmmoSet_MusketBall</ammoSet>
+		</AmmoUser>
+	</Operation>
+	<!-- /tools/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Musket_Nan"]</xpath>
+		<value>
+			<tools>
+				<li Class="CombatExtended.ToolCE">
+					<label>grip</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<chanceFactor>1.5</chanceFactor>
+					<armorPenetration>0.102</armorPenetration>
+					<linkedBodyPartsGroup>Grip</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>barrel</label>
+					<capacities>
+						<li>Blunt</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.102</armorPenetration>
+					<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+					<label>muzzle</label>
+					<capacities>
+						<li>Poke</li>
+					</capacities>
+					<power>8</power>
+					<cooldownTime>1.6</cooldownTime>
+					<armorPenetration>0.075</armorPenetration>
+					<linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+				</li>
+			</tools>
+		</value>
+	</Operation>
+	<!-- /tags/ -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Musket_Nan"]</xpath>
+		<value>
+			<weaponTags>
+				<li>CE_AI_Rifle</li>
+			</weaponTags>
+		</value>
+	</Operation>
+	<!-- END -->
+</Patch>

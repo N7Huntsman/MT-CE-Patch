@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+    <ThingCategoryDef>
+      <defName>AmmoBallistaBolts</defName>
+      <label>Ballista Bolts</label>
+      <parent>AmmoNeolithic</parent>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_BallistaBolt</defName>
+		<label>Ballista Bolt</label>
+		<ammoTypes>
+			<Ammo_BallistaBolt>Projectile_BallistaBolt</Ammo_BallistaBolt>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+	
+   <ThingDef Name="AmmoBallistaBolt" ParentName="AmmoBaseMT" Abstract="True">
+    <description>Heavy bolt designed to be fired from a medieval ballista.</description>
+    <statBases>
+      <Mass>3.00</Mass>
+      <Bulk>2.00</Bulk>
+      <Flammability>1</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>AmmoBallistaBolts</li>
+    </thingCategories>
+    <stackLimit>75</stackLimit>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBallistaBolt">
+    <defName>Ammo_BallistaBolt</defName>
+    <label>Ballista Bolt</label>
+    <graphicData>
+      <texPath>Things/Ammo/Neolithic/Pilum</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>3.5</MarketValue>
+    </statBases>
+    <ammoClass>BallistaBolt</ammoClass>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef ParentName="BaseProjectileNeolithic" Name="BaseBallistaBolt" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Pilum</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Stab</damageDef>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseBallistaBolt">
+		<defName>Projectile_BallistaBolt</defName>
+		<label>Ballista Bolt</label>
+		<projectile>
+			<damageAmountBase>30</damageAmountBase>
+			<speed>65</speed>
+			<armorPenetrationBase>0.6</armorPenetrationBase>
+			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_BallistaBolt</preExplosionSpawnThingDef>
+		</projectile>
+	</ThingDef>
+  
+	<!-- ==================== Recipes ========================== -->
+
+    <RecipeDef ParentName="AmmoRecipeNeolithicBase">
+    <defName>MakeBallistaBolt</defName>
+    <label>make ballista bolt</label>
+    <description>Craft ballista bolt.</description>
+    <jobString>Making ballista bolt.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_BallistaBolt>1</Ammo_BallistaBolt>
+    </products>
+		<recipeUsers>
+      <li>MedTimes_BlacksmithForge</li>
+	  <li>MedTimes_BlacksmithForgeTierTwo</li>
+		</recipeUsers>
+  </RecipeDef>
+	
+</Defs>

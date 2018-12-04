@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- ========== (Artifact) Helmets ========== -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_Nan"]/statBases</xpath>
+		<value>
+			<Bulk>2</Bulk>
+			<WornBulk>1.5</WornBulk>
+			<Mass>2</Mass>
+		</value>
+	</Operation>
+</Patch>

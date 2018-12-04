@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoBlackArrows</defName>
+      <label>black arrows</label>
+      <parent>AmmoNeolithic</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberArrow</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_BlackArrows</defName>
+		<label>Black Arrows</label>
+		<ammoTypes>
+			<Ammo_BlackArrows>Projectile_BlackArrow</Ammo_BlackArrows>
+			<Ammo_FlamingBlackArrows>Projectile_FlamingBlackArrow</Ammo_FlamingBlackArrows>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="AmmoBlackArrow" ParentName="AmmoBaseMT" Abstract="True">
+    <statBases>
+      <Mass>0.2</Mass>
+      <Bulk>0.2</Bulk>
+      <Flammability>1</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>AmmoBlackArrows</li>
+    </thingCategories>
+    <stackLimit>200</stackLimit>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBlackArrow">
+    <defName>Ammo_BlackArrows</defName>
+	<description>The infamous Black arrow features a square-sectioned arrowhead specially designed to penetrate plate armor. Fired from the longbow, this arrow is deadly to even the most heavily armored targets.</description>
+    <label>Black Arrows</label>
+    <graphicData>
+      <texPath>Things/Ammo/BodkinArrows</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.6</MarketValue>
+    </statBases>
+    <ammoClass>BlackArrow</ammoClass>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBlackArrow">
+    <defName>Ammo_FlamingBlackArrows</defName>
+    <description>The infamous Black arrow features a square-sectioned arrowhead specially designed to penetrate plate armor. This particular version has the Black arrowhead wrapped and tied with cloth, and dipped in quicklime pitch for flammability. At the cost of armor penetration and velocity, this projectile will ignite any hit target with flames, even if the arrow itself is deflected by armor.</description>
+    <label>Flaming Black Arrows</label>
+    <graphicData>
+      <texPath>Things/Ammo/FlamingArrows</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.8</MarketValue>
+    </statBases>
+    <ammoClass>FlamingBlackArrow</ammoClass>
+  </ThingDef>
+
+  
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef Name="BaseBlackArrowProjectile" ParentName="BaseBullet" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Arrow_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBlackArrowProjectile">
+		<defName>Projectile_BlackArrow</defName>
+		<label>Black Arrow</label>
+		<projectile>
+			<damageDef>Arrow</damageDef>
+            <speed>56</speed>
+			<damageAmountBase>20</damageAmountBase>
+			<armorPenetrationBase>0.5</armorPenetrationBase>
+			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_BlackArrows</preExplosionSpawnThingDef>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseBlackArrowProjectile">
+		<defName>Projectile_FlamingBlackArrow</defName>
+		<label>Flaming Black Arrow</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+		  <damageDef>Arrow</damageDef>
+          <speed>35</speed>
+		  <damageAmountBase>16</damageAmountBase>
+		  <secondaryDamage>
+            <li>
+              <def>Flame_Secondary</def>
+              <amount>4</amount>
+            </li>
+          </secondaryDamage>
+         <armorPenetrationBase>0.3</armorPenetrationBase>
+		 <preExplosionSpawnChance>0.2</preExplosionSpawnChance>
+		 <preExplosionSpawnThingDef>Ammo_FlamingBlackArrows</preExplosionSpawnThingDef>
+        </projectile>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+
+  <RecipeDef ParentName="AmmoRecipeMedievalBase">
+    <defName>MakeAmmo_BlackArrow</defName>
+    <label>make Black arrows x10</label>
+    <description>Craft 10 Black arrows.</description>
+    <jobString>Making Black arrows.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_BlackArrows>10</Ammo_BlackArrows>
+    </products>
+    <recipeUsers>
+      <li>MedTimes_BlacksmithForge</li>
+	  <li>MedTimes_BlacksmithForgeTierTwo</li>
+     </recipeUsers>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="AmmoRecipeMedievalBase">
+    <defName>MakeAmmo_FlamingBlackArrow</defName>
+    <label>make flaming Black arrows x10</label>
+    <description>Craft 10 flaming Black arrows.</description>
+    <jobString>Making flaming Black arrows.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Ammo_BlackArrows</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedTimes_Resource_Quicklime</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+	<allowMixingIngredients>true</allowMixingIngredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Ammo_BlackArrows</li>
+        <li>MedTimes_Resource_Quicklime</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_FlamingBlackArrows>10</Ammo_FlamingBlackArrows>
+    </products>
+	<recipeUsers>
+      <li>MedTimes_CraftingStation</li>	  
+    </recipeUsers>
+  </RecipeDef>
+	
+</Defs>

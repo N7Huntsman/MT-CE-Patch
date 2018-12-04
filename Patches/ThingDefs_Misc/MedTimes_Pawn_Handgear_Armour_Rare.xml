@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<Operation Class="PatchOperationSequence">
+		<operations>
+			<li Class="CombatExtended.PatchOperationFindMod">
+				<modName>Medieval Times</modName>
+			</li>
+			<!-- ========== Mass Stat Removal ========== -->
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_HandArmour_Rare"]/statBases/Mass</xpath>
+			</li>
+			<!-- ========== (Artifact) Hand Accessories ========== -->
+			<li Class="PatchOperationAdd">
+				<xpath>/Defs/ThingDef[@Name="MedTimes_HandArmour_Rare"]/statBases</xpath>
+				<value>
+					<Bulk>2</Bulk>
+					<WornBulk>1.5</WornBulk>
+					<Mass>2</Mass>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+
+</Patch>

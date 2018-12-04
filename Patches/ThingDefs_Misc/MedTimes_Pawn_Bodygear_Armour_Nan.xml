@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- ==========  Stat Offset Removal ========== -->
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_Nan"]/equippedStatOffsets</xpath>
+	</Operation>
+	<!-- ========== (Artifact) Body Armours ========== -->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[@Name="MedTimes_Armour_Nan"]/statBases</xpath>
+		<value>
+			<Bulk>10</Bulk>
+			<WornBulk>5</WornBulk>
+			<Mass>10</Mass>
+		</value>
+	</Operation>
+</Patch>

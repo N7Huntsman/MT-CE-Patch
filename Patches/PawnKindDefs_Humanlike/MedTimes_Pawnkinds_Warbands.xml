@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/PawnKindDef[@Name="MedTimes_Class_Warband_Sapper"]/weaponTags</xpath>
+    <value>
+      <weaponTags>
+        <li>MedTimes_Weapon_Sapper</li>
+      </weaponTags>
+    </value>
+  </Operation>
+  <!-- ==== (Warband) Peasant ==== -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/PawnKindDef[@Name="MedTimes_Class_Warband_Peasant"]</xpath>
+    <value>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount>
+          <min>25</min>
+          <max>50</max>
+        </primaryMagazineCount>
+        <forcedSidearm>
+          <sidearmMoney>
+            <min>150</min>
+            <max>450</max>
+          </sidearmMoney>
+          <weaponTags>
+            <li>MedTimes_Weapon_Peasant</li>
+          </weaponTags>
+        </forcedSidearm>
+      </li>
+    </value>
+  </Operation>
+  <!--  ==== (Warband) Archer  ==== -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/PawnKindDef[@Name="MedTimes_Class_Warband_Archer"]</xpath>
+    <value>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount>
+          <min>25</min>
+          <max>50</max>
+        </primaryMagazineCount>
+        <forcedSidearm>
+          <sidearmMoney>
+            <min>150</min>
+            <max>450</max>
+          </sidearmMoney>
+          <weaponTags>
+            <li>CE_Sidearm_Melee</li>
+          </weaponTags>
+        </forcedSidearm>
+      </li>
+    </value>
+  </Operation>
+  <!-- ==== (Warband) Conscript ==== -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/PawnKindDef[@Name="MedTimes_Class_Warband_Conscript"]</xpath>
+    <value>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <shieldMoney>
+          <min>100</min>
+          <max>500</max>
+        </shieldMoney>
+        <shieldTags>
+          <li>TribalShield</li>
+        </shieldTags>
+        <shieldChance>0.3</shieldChance>
+      </li>
+    </value>
+  </Operation>
+  <!-- ==== (Warband) Man at Arms ==== -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/PawnKindDef[@Name="MedTimes_Class_Warband_ManAtArms"]</xpath>
+    <value>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <shieldMoney>
+          <min>100</min>
+          <max>800</max>
+        </shieldMoney>
+        <shieldTags>
+          <li>TribalShield</li>
+        </shieldTags>
+        <shieldChance>0.5</shieldChance>
+      </li>
+    </value>
+  </Operation>
+  <!-- ========== (Warband) Elite Bowman ========== -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/PawnKindDef[@Name="MedTimes_Class_Warband_EliteBowman"]</xpath>
+    <value>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <primaryMagazineCount>
+          <min>25</min>
+          <max>50</max>
+        </primaryMagazineCount>
+        <forcedSidearm>
+          <sidearmMoney>
+            <min>350</min>
+            <max>650</max>
+          </sidearmMoney>
+          <weaponTags>
+            <li>CE_Sidearm_Melee</li>
+          </weaponTags>
+        </forcedSidearm>
+      </li>
+    </value>
+  </Operation>
+  <!-- ========== (Warband) Knight ========== -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/PawnKindDef[@Name="MedTimes_Class_Warband_Knight"]</xpath>
+    <value>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <shieldMoney>
+          <min>300</min>
+          <max>1400</max>
+        </shieldMoney>
+        <shieldTags>
+          <li>HeaterShield</li>
+        </shieldTags>
+        <shieldChance>0.5</shieldChance>
+      </li>
+    </value>
+  </Operation>
+  <!-- ========== (Warband) Royal Guard ========== -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/PawnKindDef[@Name="MedTimes_Class_Warband_RoyalGuard"]</xpath>
+    <value>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <shieldMoney>
+          <min>400</min>
+          <max>1400</max>
+        </shieldMoney>
+        <shieldTags>
+          <li>HeaterShield</li>
+        </shieldTags>
+        <shieldChance>0.75</shieldChance>
+      </li>
+    </value>
+  </Operation>
+  <!-- ========== (Warband) God King ========== -->
+  <Operation Class="PatchOperationAddModExtension">
+    <xpath>/Defs/PawnKindDef[@Name="MedTimes_Class_Warband_Warlord"]</xpath>
+    <value>
+      <li Class="CombatExtended.LoadoutPropertiesExtension">
+        <shieldMoney>
+          <min>400</min>
+          <max>1400</max>
+        </shieldMoney>
+        <shieldTags>
+          <li>HeaterShield</li>
+        </shieldTags>
+        <shieldChance>0.8</shieldChance>
+      </li>
+    </value>
+  </Operation>
+</Patch>

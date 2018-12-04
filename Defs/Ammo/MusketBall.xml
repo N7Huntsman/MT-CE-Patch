@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingCategoryDef>
+		<defName>AmmoMusketBall</defName>
+		<label>Musket Ball</label>
+		<parent>AmmoRifles</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberRifle</iconPath>
+	</ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_MusketBall</defName>
+		<label>Musket Ball</label>
+		<ammoTypes>
+			<Ammo_MusketBall>Bullet_MusketBall</Ammo_MusketBall>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="MusketBallBase" ParentName="SmallAmmoBase" Abstract="True">
+		<description>A .69 caliber projectile traditionally fired from a smooth-bore musket.</description>
+		<statBases>
+		<Mass>0.05</Mass>
+		<Bulk>0.07</Bulk>
+		</statBases>
+	<tradeTags>
+		<li>CE_AutoEnableTrade</li>
+	</tradeTags>
+		<thingCategories>
+			<li>AmmoMusketBall</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="MusketBallBase">
+		<defName>Ammo_MusketBall</defName>
+		<label>Musket Ball</label>
+		<graphicData>
+			<texPath>Things/Ammo/MusketBalls</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.05</MarketValue>
+		</statBases>
+		<ammoClass>RoundBall</ammoClass>
+	</ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+	
+	<ThingDef Name="MusketBallBullet" ParentName="BaseBullet" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<speed>85</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="MusketBallBullet">
+		<defName>Bullet_MusketBall</defName>
+		<label>Musket Ball</label>
+		<projectile>
+			<damageAmountBase>35</damageAmountBase>
+			<armorPenetrationBase>0.4</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+  
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_MusketBall</defName>
+		<label>make musket ball x500</label>
+		<description>Craft 500 musket balls.</description>
+		<jobString>Making musket balls.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>8</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_MusketBall>500</Ammo_MusketBall>
+		</products>
+    	<workAmount>5500</workAmount>
+        <recipeUsers>
+          <li>FueledSmithy</li>
+	      <li>ElectricSmithy</li>
+        </recipeUsers>
+	</RecipeDef>
+	
+</Defs>

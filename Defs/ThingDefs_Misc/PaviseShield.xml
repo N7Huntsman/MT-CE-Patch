@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="ArmorMakeableBase_MT" ParentName="ApparelBase" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <unfinishedThingDef>UnfinishedApparel</unfinishedThingDef>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ArmorMakeableBase_MT" Name="ShieldBase_MT" Abstract="true">
+    <thingClass>CombatExtended.Apparel_Shield</thingClass>
+    <thingCategories>
+      <li>Apparel</li>
+    </thingCategories>
+    <apparel>
+      <careIfWornByCorpse>false</careIfWornByCorpse>
+      <bodyPartGroups>
+        <li>LeftArm</li>
+      </bodyPartGroups>
+      <layers>
+        <li>Belt</li>
+      </layers>
+    </apparel>
+    <storedConceptLearnOpportunity>CE_Shields</storedConceptLearnOpportunity>
+  </ThingDef>
+
+  <ThingDef ParentName="ShieldBase_MT">
+    <defName>Apparel_PaviseShield</defName>
+    <label>pavise shield</label>
+    <description>The pavise is large full-body shield used by crossbowmen for protection while reloading on the battlefield. The large spike at the base of the shield is designed to allow the user to "plant" the shield so that it doesn't interfere with crossbow aiming and reloading, much like a personal manlet. However, due to it's immense size and weight, it will surely hinder melee combat. Although they are widely known for being painted with colorful murals, this particular pavise is a generic, non-muraled variant.</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Shields/PaviseShield/Pavise_Normal</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>80</costStuffCount>
+    <stuffCategories>
+      <li>Steeled</li>
+    </stuffCategories>
+	    <recipeMaker>
+      <recipeUsers>
+        <li>MedTimes_BlacksmithForgeTierTwo</li>
+      </recipeUsers>
+    </recipeMaker>
+    <statBases>
+      <WorkToMake>9500</WorkToMake>
+      <MaxHitPoints>125</MaxHitPoints>
+      <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+      <Mass>8</Mass>
+      <Bulk>12</Bulk>
+      <WornBulk>8</WornBulk>
+    </statBases>
+    <equippedStatOffsets>
+      <ReloadSpeed>-0.025</ReloadSpeed>
+      <MeleeHitChance>-1.5</MeleeHitChance>
+      <ShootingAccuracyPawn>0.1</ShootingAccuracyPawn>
+      <AimingAccuracy>0.1</AimingAccuracy>
+      <Suppressability>-1</Suppressability>
+      <MeleeCritChance>-0.25</MeleeCritChance>
+      <MeleeParryChance>0.4</MeleeParryChance>
+    </equippedStatOffsets>
+	<tradeTags>	
+		<li>MedTimes_Armour</li>
+	</tradeTags>
+    <apparel>
+      <tags>
+        <li>PaviseShield</li>
+      </tags>
+    </apparel>
+    <modExtensions>
+      <li Class="CombatExtended.ShieldDefExtension">
+        <shieldCoverage>
+          <li>Hands</li>
+          <li>Arms</li>
+          <li>Shoulders</li>
+          <li>Torso</li>
+          <li>Neck</li>
+          <li>FullHead</li>
+          <li>Legs</li>
+        </shieldCoverage>
+		<crouchCoverage>
+			<li>Legs</li>
+        </crouchCoverage>
+      </li>
+    </modExtensions>
+  </ThingDef>
+  
+  <ThingDef ParentName="ShieldBase_MT">
+    <defName>Apparel_MuraledPaviseShield</defName>
+    <label>muraled pavise shield</label>
+    <description>(Artifact) The pavise is large full-body shield used by crossbowmen for protection while reloading. The large spike at the base of the shield is designed to allow the user to "plant" the shield so that it doesn't interfere with crossbow aiming and reloading, much like a personal manlet. However, due to it's immense size and weight, it will surely hinder melee combat. This particular pavise also features a colorful mural that was supposedly painted by the famed artist known as "Vindar".</description>
+    <techLevel>Medieval</techLevel>
+    <graphicData>
+      <texPath>Things/Shields/PaviseShield/Pavise_Muraled</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <costStuffCount>85</costStuffCount>
+    <stuffCategories>
+      <li>Steeled</li>
+    </stuffCategories>
+    <statBases>
+	  <MarketValue>4000</MarketValue>
+      <MaxHitPoints>125</MaxHitPoints>
+      <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+      <Mass>8</Mass>
+      <Bulk>12</Bulk>
+      <WornBulk>7</WornBulk>
+    </statBases>
+    <equippedStatOffsets>
+      <ReloadSpeed>-0.02</ReloadSpeed>
+      <MeleeHitChance>-1.3</MeleeHitChance>
+      <ShootingAccuracyPawn>0.125</ShootingAccuracyPawn>
+      <AimingAccuracy>0.125</AimingAccuracy>
+      <Suppressability>-1</Suppressability>
+      <MeleeCritChance>-0.2</MeleeCritChance>
+      <MeleeParryChance>0.35</MeleeParryChance>
+    </equippedStatOffsets>
+	<tradeTags>	
+		<li>MedTimes_Artifact</li>
+	</tradeTags>
+    <apparel>
+      <tags>
+		<li>MuraledPaviseShield</li>
+      </tags>
+    </apparel>
+    <modExtensions>
+      <li Class="CombatExtended.ShieldDefExtension">
+        <shieldCoverage>
+          <li>Hands</li>
+          <li>Arms</li>
+          <li>Shoulders</li>
+          <li>Torso</li>
+          <li>Neck</li>
+          <li>FullHead</li>
+          <li>Legs</li>
+        </shieldCoverage>
+		<drawAsTall>true</drawAsTall>		
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+</Defs>

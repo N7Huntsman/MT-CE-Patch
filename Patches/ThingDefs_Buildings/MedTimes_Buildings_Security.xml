@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- ========== Medieval Ballista ========== -->
+  
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Turret_Ballista"]</xpath>
+		<value>
+			<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Turret_Ballista"]/building</xpath>
+		<value>
+			<building>
+				<turretBurstWarmupTime>1</turretBurstWarmupTime>
+				<turretBurstCooldownTime>1</turretBurstCooldownTime>
+				<ai_combatDangerous>false</ai_combatDangerous>	
+				<turretGunDef>MedTimes_Turret_BallistaTop</turretGunDef>
+				<turretTopGraphicPath>Things/Building/Security/Ballista/MedTimes_Ballista_Top</turretTopGraphicPath> 
+			</building>
+		</value>
+	</Operation>
+	
+  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
+    <defName>MedTimes_Turret_BallistaTop</defName>
+    <statBases>
+      <SightsEfficiency>0.8</SightsEfficiency>
+      <ShotSpread>1</ShotSpread>
+      <SwayFactor>1</SwayFactor>
+      <Bulk>4.00</Bulk>
+      <RangedWeapon_Cooldown>2</RangedWeapon_Cooldown>
+    </statBases>
+    <Properties>
+      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+      <hasStandardCommand>true</hasStandardCommand>
+      <defaultProjectile>Projectile_BallistaBolt</defaultProjectile>
+      <warmupTime>1.4</warmupTime>
+      <range>44</range>
+      <soundCast>Bow_Large</soundCast>
+      <recoilPattern>Mounted</recoilPattern>
+    </Properties>
+    <AmmoUser>
+	  <magazineSize>1</magazineSize>
+	  <reloadTime>8</reloadTime>
+	  <spawnUnloaded>true</spawnUnloaded>
+      <ammoSet>AmmoSet_BallistaBolt</ammoSet>
+    </AmmoUser>
+    <FireModes>
+    	<aiAimMode>AimedShot</aiAimMode>
+    	<noSnapshot>true</noSnapshot>
+    	<noSingleShot>false</noSingleShot>
+    </FireModes>
+  </Operation>
+  
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName = "MedTimes_Turret_BallistaTop"]</xpath>
+		<value>
+		   <weaponTags>
+			  <li>TurretGun</li>
+		   </weaponTags>
+		</value>
+	</Operation>
+  
+  <!-- ========== Catapult ========== -->
+  
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="MedTimes__Artillery_Catapult"]/thingClass</xpath>
+		<value>
+			<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Artillery_CatapultTop"]/statBases</xpath>
+		<value>
+			<statBases>
+		      <MarketValue>1500</MarketValue>
+			  <SightsEfficiency>0.5</SightsEfficiency>
+			</statBases>
+		</value>
+	</Operation>
+  
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes__Artillery_Catapult"]/building</xpath>
+		<value>
+			<spawnedConceptLearnOpportunity>CE_MortarDirectFire</spawnedConceptLearnOpportunity>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="MedTimes__Artillery_Catapult"]/building/turretBurstWarmupTime</xpath>
+		<value>
+			<turretBurstWarmupTime>1</turretBurstWarmupTime>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="MedTimes__Artillery_Catapult"]/building/turretBurstCooldownTime</xpath>
+		<value>
+			<turretBurstCooldownTime>1</turretBurstCooldownTime>
+		</value>
+	</Operation>
+  
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName = "MedTimes_Artillery_CatapultTop"]</xpath>
+		<value>
+			<comps>
+			  <li Class="CombatExtended.CompProperties_Charges">
+			    <charges>
+			      <li>(30,60)</li>
+			      <li>(50,180)</li>
+			      <li>(70,360)</li>
+			      <li>(90,720)</li>
+			    </charges>
+			  </li>
+			  <li Class="CombatExtended.CompProperties_AmmoUser">
+			    <magazineSize>1</magazineSize>
+			    <reloadTime>12</reloadTime>
+			    <spawnUnloaded>true</spawnUnloaded>
+			    <ammoSet>AmmoSet_ExplosivePot</ammoSet>
+			  </li>
+			</comps>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName = "MedTimes_Artillery_CatapultTop"]/verbs</xpath>
+		<value>
+			<verbs>
+			  <li Class="CombatExtended.VerbPropertiesCE">
+			    <verbClass>CombatExtended.Verb_ShootMortarCE</verbClass>
+			    <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			    <hasStandardCommand>true</hasStandardCommand>
+			    <defaultProjectile>Projectile_ExplosivePot</defaultProjectile>
+			    <warmupTime>4</warmupTime>
+			    <minRange>18</minRange>
+			    <range>60</range>
+			    <burstShotCount>1</burstShotCount>
+			    <soundCast>Mortar_LaunchA</soundCast>
+			    <muzzleFlashScale>16</muzzleFlashScale>
+			    <indirectFirePenalty>0.2</indirectFirePenalty>
+			    <targetParams>
+			      <canTargetLocations>true</canTargetLocations>
+			    </targetParams>
+			  </li>
+			</verbs>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="MedTimes__Artillery_Catapult"]/inspectorTabs</xpath>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName = "MedTimes_Artillery_CatapultTop"]</xpath>
+		<value>
+		   <weaponTags>
+			  <li>TurretGun</li>
+		   </weaponTags>
+		</value>
+	</Operation>
+	
+  <!-- ========== Murder Hole ========== -->
+  
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Artillery_MurderHole"]</xpath>
+		<value>
+			<thingClass>CombatExtended.Building_TurretGunCE</thingClass>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Artillery_MurderHoleTop"]/label</xpath>
+		<value>
+			<label>Murder Hole</label>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Artillery_MurderHoleTop"]/statBases</xpath>
+		<value>
+			<statBases>
+			  <SightsEfficiency>2</SightsEfficiency>
+			</statBases>
+		</value>
+	</Operation>
+  
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Artillery_MurderHole"]/building</xpath>
+		<value>
+			<spawnedConceptLearnOpportunity>CE_MortarDirectFire</spawnedConceptLearnOpportunity>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Artillery_MurderHole"]/building/turretBurstWarmupTime</xpath>
+		<value>
+			<turretBurstWarmupTime>1</turretBurstWarmupTime>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Artillery_MurderHole"]/building/turretBurstCooldownTime</xpath>
+		<value>
+			<turretBurstCooldownTime>1</turretBurstCooldownTime>
+		</value>
+	</Operation>
+  
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName = "MedTimes_Artillery_MurderHoleTop"]</xpath>
+		<value>
+			<comps>
+			  <li Class="CombatExtended.CompProperties_Charges">
+			    <charges>
+			      <li>(30,60)</li>
+			      <li>(50,180)</li>
+			      <li>(70,360)</li>
+			      <li>(90,720)</li>
+			    </charges>
+			  </li>
+			  <li Class="CombatExtended.CompProperties_AmmoUser">
+			    <magazineSize>1</magazineSize>
+			    <reloadTime>4</reloadTime>
+			    <spawnUnloaded>true</spawnUnloaded>
+			    <ammoSet>AmmoSet_QuicklimePitch</ammoSet>
+			  </li>
+			</comps>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/ThingDef[defName = "MedTimes_Artillery_MurderHoleTop"]/verbs</xpath>
+		<value>
+			<verbs>
+			  <li Class="CombatExtended.VerbPropertiesCE">
+			    <verbClass>CombatExtended.Verb_ShootMortarCE</verbClass>
+			    <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			    <hasStandardCommand>true</hasStandardCommand>
+			    <defaultProjectile>Projectile_QuicklimePitch</defaultProjectile>
+			    <warmupTime>4</warmupTime>
+			    <minRange>0</minRange>
+			    <range>5</range>
+			    <burstShotCount>1</burstShotCount>
+			    <soundCast>Mortar_LaunchA</soundCast>
+			    <muzzleFlashScale>16</muzzleFlashScale>
+			    <forcedMissRadius>0</forcedMissRadius>
+			    <indirectFirePenalty>0</indirectFirePenalty>
+			    <targetParams>
+			      <canTargetLocations>true</canTargetLocations>
+			    </targetParams>
+			  </li>
+			</verbs>
+		</value>
+	</Operation>
+	<!-- I don't think we need this (and it doesn't seem to work), but we'll leave it here just in case.
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="MedTimes_ArtilleryWeapon"]/canBeSpawningInventory</xpath>
+	</Operation>
+	-->
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Artillery_MurderHole"]</xpath>
+		<value>
+			<minifiedDef>MinifiedThing</minifiedDef>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Artillery_MurderHole"]/inspectorTabs</xpath>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/ThingDef[defName = "MedTimes_Artillery_MurderHoleTop"]</xpath>
+		<value>
+		   <weaponTags>
+			  <li>TurretGun</li>
+		   </weaponTags>
+		</value>
+	</Operation>
+
+</Patch>
+

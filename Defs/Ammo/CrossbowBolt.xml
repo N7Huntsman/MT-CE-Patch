@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoCrossbowBolts</defName>
+      <label>Bolts</label>
+      <parent>AmmoNeolithic</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberArrow</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_CrossbowBolts</defName>
+		<label>Bolts</label>
+		<ammoTypes>
+			<Ammo_CrossbowBolts>Projectile_CrossbowBolt</Ammo_CrossbowBolts>
+			<Ammo_FlamingBolts>Projectile_FlamingBolt</Ammo_FlamingBolts>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Name="AmmoCrossbowBolt" ParentName="AmmoBaseMT" Abstract="True">
+    <statBases>
+      <Mass>0.2</Mass>
+      <Bulk>0.2</Bulk>
+      <Flammability>1</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>AmmoCrossbowBolts</li>
+    </thingCategories>
+    <stackLimit>200</stackLimit>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoCrossbowBolt">
+    <defName>Ammo_CrossbowBolts</defName>
+    <description>A bolt projectile designed to be fired from either a crossbow or arbalest.</description>
+    <label>Bolts</label>
+    <graphicData>
+      <texPath>Things/Ammo/CrossbowBolts</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.6</MarketValue>
+    </statBases>
+    <ammoClass>CrossbowBolt</ammoClass>
+  </ThingDef>
+  
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoCrossbowBolt">
+    <defName>Ammo_FlamingBolts</defName>
+    <description>A bolt projectile designed to be fired from either a crossbow or an arbalest. This particular version has the head of the bolt wrapped and tied with cloth, and dipped in quicklime pitch for flammability. At the cost of armor penetration and velocity, this projectile will ignite any hit target with flames, even if the bolt itself is deflected by armor.</description>
+    <label>Flaming Bolts</label>
+    <graphicData>
+      <texPath>Things/Ammo/FlamingBolts</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.8</MarketValue>
+    </statBases>
+    <ammoClass>FlamingBolt</ammoClass>
+  </ThingDef>
+
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef Name="BaseCrossbowBoltProjectile" ParentName="BaseBullet" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Arrow_Small</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseCrossbowBoltProjectile">
+		<defName>Projectile_CrossbowBolt</defName>
+		<label>Bolt</label>
+		<projectile>
+			<damageDef>Arrow</damageDef>
+			<speed>65</speed>
+			<damageAmountBase>16</damageAmountBase>
+			<armorPenetrationBase>0.4</armorPenetrationBase>
+			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_CrossbowBolts</preExplosionSpawnThingDef>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseCrossbowBoltProjectile">
+		<defName>Projectile_FlamingBolt</defName>
+		<label>Flaming Bolt</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+		  <damageDef>Flame</damageDef>
+          <speed>40</speed>
+		  <damageAmountBase>4</damageAmountBase>
+		  <secondaryDamage>
+            <li>
+              <def>Arrow</def>
+              <amount>12</amount>
+            </li>
+          </secondaryDamage>
+         <armorPenetrationBase>0.25</armorPenetrationBase>
+		 <preExplosionSpawnChance>0.2</preExplosionSpawnChance>
+		 <preExplosionSpawnThingDef>Ammo_FlamingBolts</preExplosionSpawnThingDef>
+        </projectile>
+	</ThingDef>
+
+	<!-- ==================== Recipes ========================== -->
+
+  <RecipeDef ParentName="AmmoRecipeMedievalBase">
+    <defName>MakeAmmo_CrossbowBolt</defName>
+    <label>make bolts x10</label>
+    <description>Craft 10 bolts.</description>
+    <jobString>Making bolts.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_CrossbowBolts>10</Ammo_CrossbowBolts>
+    </products>
+    <recipeUsers>
+      <li>MedTimes_BlacksmithForge</li>
+	  <li>MedTimes_BlacksmithForgeTierTwo</li>
+     </recipeUsers>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="AmmoRecipeMedievalBase">
+    <defName>MakeAmmo_Flamingbolt</defName>
+    <label>make flaming bolts x10</label>
+    <description>Craft 10 flaming bolts.</description>
+    <jobString>Making flaming bolts.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Ammo_CrossbowBolts</li>
+          </thingDefs>
+        </filter>
+        <count>10</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedTimes_Resource_Quicklime</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Ammo_CrossbowBolts</li>
+        <li>MedTimes_Resource_Quicklime</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_FlamingBolts>10</Ammo_FlamingBolts>
+    </products>
+	<recipeUsers>
+      <li>MedTimes_CraftingStation</li>	  
+    </recipeUsers>
+  </RecipeDef>
+	
+</Defs>

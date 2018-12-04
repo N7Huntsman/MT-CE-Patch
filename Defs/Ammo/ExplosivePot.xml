@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+    <ThingCategoryDef>
+      <defName>AmmoExplosivePots</defName>
+      <label>Explosive Pots</label>
+      <parent>AmmoNeolithic</parent>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_ExplosivePot</defName>
+		<label>Explosive Pot</label>
+		<ammoTypes>
+			<MedTimes_Resource_ExplosivePot>Projectile_ExplosivePot</MedTimes_Resource_ExplosivePot>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+	
+   <ThingDef Class="CombatExtended.AmmoDef" Name="AmmoExplosivePot" ParentName="AmmoBase" Abstract="True">
+    <description>Fired from catapults, explodes on impact.</description>
+    <statBases>
+      <Mass>6</Mass>
+      <Bulk>5</Bulk>
+    </statBases>
+    <thingCategories>
+      <li>AmmoExplosivePots</li>
+    </thingCategories>
+    <stackLimit>25</stackLimit>
+    <cookOffFlashScale>30</cookOffFlashScale>
+    <cookOffSound>MortarBomb_Explode</cookOffSound>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoExplosivePot">
+    <defName>MedTimes_Resource_ExplosivePot</defName>
+    <label>Explosive Pot</label>
+    <graphicData>
+      <texPath>Things/Item/Resource/Produced/MedTimes_ExplosivePot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <MarketValue>10</MarketValue>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <ammoClass>GrenadeIncendiary</ammoClass>
+    <comps>
+      <li Class="CombatExtended.CompProperties_ExplosiveCE">
+        <explosionDamageDef>Flame</explosionDamageDef>
+        <explosionDamage>25</explosionDamage>
+        <explosionRadius>3.5</explosionRadius>
+        <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+        <preExplosionSpawnChance>0.5</preExplosionSpawnChance>
+        <soundExplode>MortarIncendiary_Explode</soundExplode>
+      </li>
+    </comps>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+	<ThingDef ParentName="BaseBullet" Name="BaseExplosivePot" Abstract="true">
+		<thingClass>CombatExtended.ProjectileCE_Explosive</thingClass>
+		<graphicData>
+			<texPath>Things/Item/Resource/Produced/MedTimes_ExplosivePot</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<speed>100</speed>
+			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+			<soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+			<soundAmbient>MortarRound_Ambient</soundAmbient>
+			<flyOverhead>true</flyOverhead>
+		</projectile>
+	</ThingDef>
+	
+	<ThingDef ParentName="BaseExplosivePot">
+		<defName>Projectile_ExplosivePot</defName>
+		<label>Explosive Pot</label>
+    <projectile>
+      <damageDef>Flame</damageDef>
+      <damageAmountBase>25</damageAmountBase>
+      <explosionRadius>3.5</explosionRadius>
+      <preExplosionSpawnThingDef>Filth_Fuel</preExplosionSpawnThingDef>
+      <preExplosionSpawnChance>0.35</preExplosionSpawnChance>
+      <soundExplode>MortarIncendiary_Explode</soundExplode>
+    </projectile>
+  </ThingDef>
+  
+	<!-- ==================== Recipes ========================== -->
+	
+</Defs>
