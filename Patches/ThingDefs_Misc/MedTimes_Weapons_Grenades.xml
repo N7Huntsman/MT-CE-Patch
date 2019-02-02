@@ -35,9 +35,9 @@
 	</Operation>
 
 	<Operation Class="PatchOperationReplace">
-		<xpath>/Defs/ThingDef[defName="Proj_GrenadeFrag"]/projectile</xpath>
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_MedievalGrenade_Proj"]/projectile</xpath>
 		<value>
-			<projectile>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			  <explosionRadius>1.5</explosionRadius>
 			  <damageDef>Flame</damageDef>
 			  <damageAmountBase>10</damageAmountBase>
@@ -92,6 +92,19 @@
 		</value>
 	</Operation>
 
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_MedievalGrenade"]/statBases/MarketValue</xpath>
+	</Operation>	
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_GrenadesAntioch"]/statBases/MarketValue</xpath>
+	</Operation>	
+
+	<Operation Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_GrenadesAntioch_Dud"]/statBases/MarketValue</xpath>
+	</Operation>	
+	
+	
   <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
     <defName>MedTimes_Ranged_MedievalGrenade</defName>
     <statBases>
@@ -137,7 +150,7 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_GrenadeAntiochProj"]/projectile</xpath>
 		<value>
-			<projectile>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			  <explosionRadius>10</explosionRadius>
 			  <damageDef>Flame</damageDef>
 			  <damageAmountBase>35</damageAmountBase>
@@ -239,7 +252,7 @@
 	<Operation Class="PatchOperationReplace">
 		<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_GrenadeAntiochProj_Dud"]/projectile</xpath>
 		<value>
-			<projectile>
+			<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			  <explosionRadius>10</explosionRadius>
 			  <damageDef>Extinguish</damageDef>
 			  <damageAmountBase>35</damageAmountBase>
