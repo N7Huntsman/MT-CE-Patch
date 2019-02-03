@@ -60,7 +60,7 @@
 	<ThingDef ParentName="BaseBallistaBolt">
 		<defName>Projectile_BallistaBolt</defName>
 		<label>Ballista Bolt</label>
-		<projectile>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<damageAmountBase>30</damageAmountBase>
 			<speed>65</speed>
 			<armorPenetrationBase>0.6</armorPenetrationBase>

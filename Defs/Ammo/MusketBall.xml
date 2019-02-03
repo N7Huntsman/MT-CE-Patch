@@ -63,7 +63,8 @@
 	<ThingDef ParentName="MusketBallBullet">
 		<defName>Bullet_MusketBall</defName>
 		<label>Musket Ball</label>
-		<projectile>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>		
 			<damageAmountBase>35</damageAmountBase>
 			<armorPenetrationBase>0.4</armorPenetrationBase>
 		</projectile>

@@ -77,7 +77,7 @@
 	<ThingDef ParentName="BaseBlackArrowProjectile">
 		<defName>Projectile_BlackArrow</defName>
 		<label>Black Arrow</label>
-		<projectile>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<damageDef>Arrow</damageDef>
             <speed>56</speed>
 			<damageAmountBase>20</damageAmountBase>

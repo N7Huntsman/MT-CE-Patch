@@ -67,7 +67,7 @@
 			<texPath>Things/Building/Security/MurderHole/MedTimes_WoodPitchSplatter</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
-		<projectile>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<speed>200</speed>
 			<soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
 			<soundImpactAnticipate>MedTimes_Sound_WoodPitch_Splatter</soundImpactAnticipate>
@@ -79,7 +79,7 @@
 	<ThingDef ParentName="BaseQuicklimePitch">
 		<defName>Projectile_QuicklimePitch</defName>
 		<label>Quicklime Pitch</label>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Flame</damageDef>
       <damageAmountBase>10</damageAmountBase>
       <explosionRadius>2</explosionRadius>

@@ -11,7 +11,11 @@
     <workAmount>2000</workAmount>
     <workSkill>Crafting</workSkill>
     <targetCountAdjustment>500</targetCountAdjustment>
-		<unfinishedThingDef>UnfinishedMT_Arrows</unfinishedThingDef>
+	<unfinishedThingDef>UnfinishedMT_Arrows</unfinishedThingDef>
+    <recipeUsers>
+	  <li>FueledSmithy</li>
+	  <li>ElectricSmithy</li>	  
+     </recipeUsers>	  
   </RecipeDef>
 	
 	<!-- ==================== Ammo Base ========================== -->	

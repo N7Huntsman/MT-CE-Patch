@@ -9,7 +9,7 @@
   <ThingDef ParentName="BaseBulletCMG">
     <defName>Projectile_Bullet_CMG</defName>
     <label>CMG Bullet</label>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
       <speed>140</speed>
       <damageAmountBase>13</damageAmountBase>

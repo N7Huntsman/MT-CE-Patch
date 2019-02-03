@@ -76,7 +76,7 @@
 	<ThingDef ParentName="BaseCrossbowBoltProjectile">
 		<defName>Projectile_CrossbowBolt</defName>
 		<label>Bolt</label>
-		<projectile>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<damageDef>Arrow</damageDef>
 			<speed>65</speed>
 			<damageAmountBase>16</damageAmountBase>

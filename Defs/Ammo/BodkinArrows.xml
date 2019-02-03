@@ -77,7 +77,7 @@
 	<ThingDef ParentName="BaseBodkinArrowProjectile">
 		<defName>Projectile_BodkinArrow</defName>
 		<label>Bodkin Arrow</label>
-		<projectile>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<damageDef>Arrow</damageDef>
             <speed>52</speed>
 			<damageAmountBase>18</damageAmountBase>
@@ -180,7 +180,8 @@
       <Ammo_FlamingBodkinArrows>10</Ammo_FlamingBodkinArrows>
     </products>
 	<recipeUsers>
-      <li>MedTimes_CraftingStation</li>	  
+      <li>MedTimes_CraftingStation</li>
+	  <li>CraftingSpot</li>
     </recipeUsers>
   </RecipeDef>
 	

@@ -2,8 +2,10 @@
 <ModMetaData>
 	<name>Medieval Times + Combat Extended Compatibility Mod</name>
 	<author>N7Huntsman, Arty, Tamias</author>
-	<targetVersion>1.0.2059</targetVersion>
-	<description>(Updated 12/3/18)
+	<supportedVersions>
+		<li>1.0</li>
+	</supportedVersions>
+	<description>(Updated 1/21/19)
 
 The purpose of this mod is to make Medieval Times compatible with Combat Extended. To this end, this mod makes the following changes:
 	

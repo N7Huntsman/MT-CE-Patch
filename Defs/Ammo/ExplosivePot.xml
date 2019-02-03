@@ -79,7 +79,7 @@
 	<ThingDef ParentName="BaseExplosivePot">
 		<defName>Projectile_ExplosivePot</defName>
 		<label>Explosive Pot</label>
-    <projectile>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Flame</damageDef>
       <damageAmountBase>25</damageAmountBase>
       <explosionRadius>3.5</explosionRadius>
