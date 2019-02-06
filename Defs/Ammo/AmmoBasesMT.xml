@@ -51,7 +51,7 @@
 		</tradeTags>
 		<tradeability>Sellable</tradeability>
     <tickerType>Normal</tickerType>
-    <techLevel>Industrial</techLevel>
+    <techLevel>Medieval</techLevel>
   </ThingDef>
 	
 </Defs>
