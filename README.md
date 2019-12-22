@@ -27,16 +27,4 @@ Credits and Acknowledgements
 
 - Vindar, the creator of Medieval Times. He graciously provided the wonderful artwork for all the new items, and was fundamental in the original creation of this mod.
 
-- NoImageAvailable, XeoNovaDan, and the rest of the Combat Extended Team. Through tireless effort, they have created the definitive Rimworld combat experience, and it was their guidance and resource documentation that made this mod possible.
-
----
-
-Like the mod? Consider buying me a cup of coffee on Ko-fi!
-
-[ko-fi.com]
-Public User Comments (0)Private Developer Comments (0)
-0 Comments	 Subscribe to thread  (?)
- 
-
-Add a comment
-
+- The Combat Extended Team. Through tireless effort, they have created the definitive Rimworld combat experience, and it was their guidance and resource documentation that made this mod possible.
