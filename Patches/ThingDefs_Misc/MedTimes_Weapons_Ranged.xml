@@ -1,253 +1,305 @@
 <?xml version='1.0' encoding='utf-8'?>
 <Patch>
-  <!-- ========== Recurved Bow ========== -->
-  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
-    <defName>MedTimes_Ranged_Composite</defName>
-    <statBases>
-      <SightsEfficiency>0.7</SightsEfficiency>
-      <ShotSpread>1</ShotSpread>
-      <SwayFactor>2</SwayFactor>
-      <Bulk>3</Bulk>
-      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
-    </statBases>
-    <Properties>
-      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
-      <hasStandardCommand>true</hasStandardCommand>
-      <defaultProjectile>Projectile_Arrow_Stone</defaultProjectile>
-      <warmupTime>0.8</warmupTime>
-      <range>29</range>
-      <soundCast>Bow_Small</soundCast>
-    </Properties>
-    <AmmoUser>
-      <ammoSet>AmmoSet_Arrow</ammoSet>
-    </AmmoUser>
-    <FireModes>
-      <aiAimMode>AimedShot</aiAimMode>
-    </FireModes>
-    <weaponTags>
-      <li>CE_Bow</li>
-    </weaponTags>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Composite"]/description</xpath>
-    <value>
-      <description>(2H) A compact but powerful composite bow, made of layers of wood held together with strong glue. Has a lower effective range than a tradition recurve bow, but shoots very quickly.</description>
-    </value>
-  </Operation>
-  <!-- ========== Longbow ========== -->
-  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
-    <defName>MedTimes_Ranged_Longbow</defName>
-    <statBases>
-      <SightsEfficiency>0.8</SightsEfficiency>
-      <ShotSpread>0.6</ShotSpread>
-      <SwayFactor>2</SwayFactor>
-      <Bulk>6.00</Bulk>
-      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
-    </statBases>
-    <Properties>
-      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
-      <hasStandardCommand>true</hasStandardCommand>
-      <defaultProjectile>Projectile_BodkinArrow</defaultProjectile>
-      <warmupTime>2</warmupTime>
-      <range>42</range>
-      <soundCast>Bow_Large</soundCast>
-    </Properties>
-    <AmmoUser>
-      <ammoSet>AmmoSet_BodkinArrows</ammoSet>
-    </AmmoUser>
-    <FireModes>
-      <aiAimMode>AimedShot</aiAimMode>
-    </FireModes>
-    <weaponTags>
-      <li>CE_Bow</li>
-    </weaponTags>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Longbow"]/description</xpath>
-    <value>
-      <description>(2H) A longbow in the English tradition with a slow draw, but tremendous range and damage. Uses the infamous Bodkin Arrow to effectively pierce armor at long range.</description>
-    </value>
-  </Operation>
-  <!-- ========== Crossbow ========== -->
-  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
-    <defName>MedTimes_Ranged_Crossbow</defName>
-    <statBases>
-      <SightsEfficiency>1</SightsEfficiency>
-      <ShotSpread>0.5</ShotSpread>
-      <SwayFactor>1.2</SwayFactor>
-      <Bulk>7.5</Bulk>
-      <RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
-    </statBases>
-    <Properties>
-      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
-      <hasStandardCommand>true</hasStandardCommand>
-      <defaultProjectile>Projectile_CrossbowBolt</defaultProjectile>
-      <warmupTime>1</warmupTime>
-      <range>26</range>
-      <soundCast>Bow_Large</soundCast>
-    </Properties>
-    <AmmoUser>
-      <magazineSize>1</magazineSize>
-      <reloadTime>7</reloadTime>
-      <ammoSet>AmmoSet_CrossbowBolts</ammoSet>
-    </AmmoUser>
-    <FireModes>
-      <aiAimMode>AimedShot</aiAimMode>
-    </FireModes>
-    <weaponTags>
-      <li>CE_Bow</li>
-    </weaponTags>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Crossbow"]/description</xpath>
-    <value>
-      <description>(2H) The crossbow is easier to use and much more accurate than a traditional bow. However, it has a low effective range, and takes much longer to load and shoot than a recurve bow (although a bolt can remain loaded in the crossbow for immediate release when needed).</description>
-    </value>
-  </Operation>
-  <!-- ========== One-Handed Crossbow ========== -->
-  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
-    <defName>MedTimes_Ranged_HandCrossbow</defName>
-    <statBases>
-      <SightsEfficiency>0.9</SightsEfficiency>
-      <ShotSpread>0.5</ShotSpread>
-      <SwayFactor>1.2</SwayFactor>
-      <Bulk>4.5</Bulk>
-      <RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
-    </statBases>
-    <Properties>
-      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
-      <hasStandardCommand>true</hasStandardCommand>
-      <defaultProjectile>Projectile_CrossbowBolt</defaultProjectile>
-      <warmupTime>1</warmupTime>
-      <range>24</range>
-      <soundCast>Bow_Large</soundCast>
-    </Properties>
-    <AmmoUser>
-      <magazineSize>1</magazineSize>
-      <reloadTime>6</reloadTime>
-      <ammoSet>AmmoSet_CrossbowBolts</ammoSet>
-    </AmmoUser>
-    <FireModes>
-      <aiAimMode>AimedShot</aiAimMode>
-    </FireModes>
-    <weaponTags>
-      <li>CE_OneHandedWeapon</li>
-      <li>CE_Bow</li>
-    </weaponTags>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>/Defs/ThingDef[defName="MedTimes_Ranged_HandCrossbow"]/description</xpath>
-    <value>
-      <description>(1H) The smaller, one-handed crossbow is more accurate and easier to use than a regular bow, and is small enough to be used together with a shield. However, its small size further sacrifices range and power for mobility (although a bolt can remain loaded into the crossbow for immediate release when needed).</description>
-    </value>
-  </Operation>
-  <!-- ========== Arbalest ========== -->
-  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
-    <defName>MedTimes_Ranged_Arbalest</defName>
-    <statBases>
-      <SightsEfficiency>1</SightsEfficiency>
-      <ShotSpread>0.4</ShotSpread>
-      <SwayFactor>1.4</SwayFactor>
-      <Bulk>9.00</Bulk>
-      <RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
-    </statBases>
-    <Properties>
-      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
-      <hasStandardCommand>true</hasStandardCommand>
-      <defaultProjectile>Projectile_CrossbowBolt</defaultProjectile>
-      <warmupTime>1</warmupTime>
-      <range>32</range>
-      <soundCast>Bow_Large</soundCast>
-    </Properties>
-    <AmmoUser>
-      <magazineSize>1</magazineSize>
-      <reloadTime>10</reloadTime>
-      <ammoSet>AmmoSet_CrossbowBolts</ammoSet>
-    </AmmoUser>
-    <FireModes>
-      <aiAimMode>AimedShot</aiAimMode>
-    </FireModes>
-    <weaponTags>
-      <li>CE_Bow</li>
-    </weaponTags>
-  </Operation>
-  <Operation Class="PatchOperationReplace">
-    <xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Arbalest"]/description</xpath>
-    <value>
-      <description>(2H) A massive crossbow made with advanced techniques and tempered steel arms for greater power and range. While similar in function to a crossbow, its massive draw weight means it must use a specialized mechanism to reload. However, due to it's larger size, it isn't usable with a shield.</description>
-    </value>
-  </Operation>
-  <!-- ======= Guns ====== -->
-  <!-- Smoothbore Musket & Ammo -->
-  <!-- /ce data/ -->
-  <Operation Class="CombatExtended.PatchOperationMakeGunCECompatible">
-    <defName>MedTimes_Ranged_Musket</defName>
-    <statBases>
-      <SightsEfficiency>1</SightsEfficiency>
-      <ShotSpread>0.2</ShotSpread>
-      <SwayFactor>1.92</SwayFactor>
-      <Bulk>8.5</Bulk>
-      <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
-    </statBases>
-    <Properties>
-      <verbClass>CombatExtended.Verb_ShootCE</verbClass>
-      <hasStandardCommand>true</hasStandardCommand>
-      <defaultProjectile>Bullet_MusketBall</defaultProjectile>
-      <warmupTime>1</warmupTime>
-      <range>30</range>
-      <soundCast>MedTimes_Sound_MusketFire</soundCast>
-      <soundCastTail>GunTail_Medium</soundCastTail>
-      <muzzleFlashScale>9</muzzleFlashScale>
-    </Properties>
-    <AmmoUser>
-      <magazineSize>1</magazineSize>
-      <reloadTime>7</reloadTime>
-      <ammoSet>AmmoSet_MusketBall</ammoSet>
-    </AmmoUser>
-    <FireModes>
-      <aiAimMode>AimedShot</aiAimMode>
-    </FireModes>
-    <weaponTags>
-      <li>CE_AI_Rifle</li>
-    </weaponTags>
-  </Operation>
-  <!-- /tools/ -->
-  <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Musket"]</xpath>
-    <value>
-      <tools>
-        <li Class="CombatExtended.ToolCE">
-          <label>stock</label>
-          <capacities>
-            <li>Blunt</li>
-          </capacities>
-          <power>8</power>
-          <cooldownTime>1.6</cooldownTime>
-          <chanceFactor>1.33</chanceFactor>
-          <armorPenetration>0.102</armorPenetration>
-          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
-        </li>
-        <li Class="CombatExtended.ToolCE">
-          <label>barrel</label>
-          <capacities>
-            <li>Blunt</li>
-          </capacities>
-          <power>8</power>
-          <cooldownTime>1.6</cooldownTime>
-          <armorPenetration>0.102</armorPenetration>
-          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
-        </li>
-        <li Class="CombatExtended.ToolCE">
-          <label>muzzle</label>
-          <capacities>
-            <li>Poke</li>
-          </capacities>
-          <power>8</power>
-          <cooldownTime>1.6</cooldownTime>
-          <armorPenetration>0.075</armorPenetration>
-          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
-        </li>
-      </tools>
-    </value>
-  </Operation>
+
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Medieval Times</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		 <operations>
+
+		  
+		<!-- Melee Tools -->
+	
+		  <li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_RangedNN"]/tools</xpath>
+		  </li>
+		  
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Musket" or
+			defName="MedTimes_Ranged_Musket_Nan" or
+			defName="MedTimes_Ranged_Arbalest" or 
+			defName="MedTimes_Ranged_Arbalest_Nan" or 
+			defName="MedTimes_Ranged_Crossbow" or
+			defName="MedTimes_Ranged_Crossbow_Nan"					
+			]</xpath>
+			<value>
+			  <tools inherit="false">
+				<li Class="CombatExtended.ToolCE">
+				  <label>stock</label>
+				  <capacities>
+					<li>Blunt</li>
+				  </capacities>
+				  <power>5</power>
+				  <cooldownTime>3.02</cooldownTime>
+				  <chanceFactor>1.33</chanceFactor>
+				  <armorPenetrationBlunt>1.63</armorPenetrationBlunt>
+				  <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+				</li>
+				<li Class="CombatExtended.ToolCE">
+				  <label>barrel</label>
+				  <capacities>
+					<li>Poke</li>
+				  </capacities>
+				  <power>8</power>
+				  <cooldownTime>1.55</cooldownTime>
+				  <armorPenetrationBlunt>2.755</armorPenetrationBlunt>
+				  <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+				</li>
+			  </tools>
+			</value>
+		  </li>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Composite" or
+            defName="MedTimes_Ranged_Composite_Nan" or
+            defName="MedTimes_Ranged_Longbow_Nan" or            
+            defName="MedTimes_Ranged_Longbow"            
+            ]</xpath>
+            <value>
+              <tools>
+                <li Class="CombatExtended.ToolCE">
+                  <capacities>
+                    <li>Blunt</li>
+                  </capacities>
+                  <power>3</power>
+                  <cooldownTime>1.76</cooldownTime>
+                  <armorPenetrationBlunt>0.65</armorPenetrationBlunt>
+                </li>
+              </tools>
+            </value>
+          </li>
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_HandCrossbow" or defName="MedTimes_Ranged_HandCrossbow_Nan"]</xpath>
+			<value>
+			  <tools>
+				<li Class="CombatExtended.ToolCE">
+				  <capacities>
+					<li>Blunt</li>
+				  </capacities>
+				  <power>2</power>
+				  <cooldownTime>1.56</cooldownTime>
+				  <armorPenetrationBlunt>0.555</armorPenetrationBlunt>
+				</li>
+			  </tools>
+			</value>
+		  </li>
+		 
+		  <!-- ========== Recurved Bow ========== -->
+		  <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+			<defName>MedTimes_Ranged_Composite</defName>
+			<statBases>
+			  <SightsEfficiency>0.7</SightsEfficiency>
+			  <ShotSpread>1</ShotSpread>
+			  <SwayFactor>2</SwayFactor>
+			  <Bulk>3</Bulk>
+			  <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+			</statBases>
+			<Properties>
+			  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			  <hasStandardCommand>true</hasStandardCommand>
+			  <defaultProjectile>Projectile_Arrow_Stone</defaultProjectile>
+			  <warmupTime>0.8</warmupTime>
+			  <range>29</range>
+			  <soundCast>Bow_Small</soundCast>
+			</Properties>
+			<AmmoUser>
+			  <ammoSet>AmmoSet_Arrow</ammoSet>
+			</AmmoUser>
+			<FireModes>
+			  <aiAimMode>AimedShot</aiAimMode>
+			</FireModes>
+			<weaponTags>
+			  <li>CE_Bow</li>
+			</weaponTags>
+		  </li>
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Composite"]/description</xpath>
+			<value>
+			  <description>(2H) A compact but powerful composite bow, made of layers of wood held together with strong glue. Has a lower effective range than a tradition recurve bow, but shoots very quickly.</description>
+			</value>
+		  </li>
+		  
+		  <!-- ========== Longbow ========== -->
+		  <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+			<defName>MedTimes_Ranged_Longbow</defName>
+			<statBases>
+			  <SightsEfficiency>0.8</SightsEfficiency>
+			  <ShotSpread>0.6</ShotSpread>
+			  <SwayFactor>2</SwayFactor>
+			  <Bulk>6.00</Bulk>
+			  <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+			</statBases>
+			<Properties>
+			  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			  <hasStandardCommand>true</hasStandardCommand>
+			  <defaultProjectile>Projectile_BodkinArrow</defaultProjectile>
+			  <warmupTime>2</warmupTime>
+			  <range>42</range>
+			  <soundCast>Bow_Large</soundCast>
+			</Properties>
+			<AmmoUser>
+			  <ammoSet>AmmoSet_BodkinArrows</ammoSet>
+			</AmmoUser>
+			<FireModes>
+			  <aiAimMode>AimedShot</aiAimMode>
+			</FireModes>
+			<weaponTags>
+			  <li>CE_Bow</li>
+			</weaponTags>
+		  </li>
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Longbow"]/description</xpath>
+			<value>
+			  <description>(2H) A longbow in the English tradition with a slow draw, but tremendous range and damage. Uses the infamous Bodkin Arrow to effectively pierce armor at long range.</description>
+			</value>
+		  </li>
+		  
+		  <!-- ========== Crossbow ========== -->
+		  <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+			<defName>MedTimes_Ranged_Crossbow</defName>
+			<statBases>
+			  <SightsEfficiency>1</SightsEfficiency>
+			  <ShotSpread>0.5</ShotSpread>
+			  <SwayFactor>1.2</SwayFactor>
+			  <Bulk>7.5</Bulk>
+			  <RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
+			</statBases>
+			<Properties>
+			  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			  <hasStandardCommand>true</hasStandardCommand>
+			  <defaultProjectile>Projectile_CrossbowBolt</defaultProjectile>
+			  <warmupTime>1</warmupTime>
+			  <range>26</range>
+			  <soundCast>Bow_Large</soundCast>
+			</Properties>
+			<AmmoUser>
+			  <magazineSize>1</magazineSize>
+			  <reloadTime>7</reloadTime>
+			  <ammoSet>AmmoSet_CrossbowBolts</ammoSet>
+			</AmmoUser>
+			<FireModes>
+			  <aiAimMode>AimedShot</aiAimMode>
+			</FireModes>
+			<weaponTags>
+			  <li>CE_Bow</li>
+			</weaponTags>
+		  </li>
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Crossbow"]/description</xpath>
+			<value>
+			  <description>(2H) The crossbow is easier to use and much more accurate than a traditional bow. However, it has a low effective range, and takes much longer to load and shoot than a recurve bow (although a bolt can remain loaded in the crossbow for immediate release when needed).</description>
+			</value>
+		  </li>
+		  
+		  <!-- ========== One-Handed Crossbow ========== -->
+		  <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+			<defName>MedTimes_Ranged_HandCrossbow</defName>
+			<statBases>
+			  <SightsEfficiency>0.9</SightsEfficiency>
+			  <ShotSpread>0.5</ShotSpread>
+			  <SwayFactor>1.2</SwayFactor>
+			  <Bulk>4.5</Bulk>
+			  <RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
+			</statBases>
+			<Properties>
+			  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			  <hasStandardCommand>true</hasStandardCommand>
+			  <defaultProjectile>Projectile_CrossbowBolt</defaultProjectile>
+			  <warmupTime>1</warmupTime>
+			  <range>24</range>
+			  <soundCast>Bow_Large</soundCast>
+			</Properties>
+			<AmmoUser>
+			  <magazineSize>1</magazineSize>
+			  <reloadTime>6</reloadTime>
+			  <ammoSet>AmmoSet_CrossbowBolts</ammoSet>
+			</AmmoUser>
+			<FireModes>
+			  <aiAimMode>AimedShot</aiAimMode>
+			</FireModes>
+			<weaponTags>
+			  <li>CE_OneHandedWeapon</li>
+			  <li>CE_Bow</li>
+			</weaponTags>
+		  </li>
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_HandCrossbow"]/description</xpath>
+			<value>
+			  <description>(1H) The smaller, one-handed crossbow is more accurate and easier to use than a regular bow, and is small enough to be used together with a shield. However, its small size further sacrifices range and power for mobility (although a bolt can remain loaded into the crossbow for immediate release when needed).</description>
+			</value>
+		  </li>
+		  
+		  <!-- ========== Arbalest ========== -->
+		  <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+			<defName>MedTimes_Ranged_Arbalest</defName>
+			<statBases>
+			  <SightsEfficiency>1</SightsEfficiency>
+			  <ShotSpread>0.4</ShotSpread>
+			  <SwayFactor>1.4</SwayFactor>
+			  <Bulk>9.00</Bulk>
+			  <RangedWeapon_Cooldown>0.1</RangedWeapon_Cooldown>
+			</statBases>
+			<Properties>
+			  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			  <hasStandardCommand>true</hasStandardCommand>
+			  <defaultProjectile>Projectile_CrossbowBolt</defaultProjectile>
+			  <warmupTime>1</warmupTime>
+			  <range>32</range>
+			  <soundCast>Bow_Large</soundCast>
+			</Properties>
+			<AmmoUser>
+			  <magazineSize>1</magazineSize>
+			  <reloadTime>10</reloadTime>
+			  <ammoSet>AmmoSet_CrossbowBolts</ammoSet>
+			</AmmoUser>
+			<FireModes>
+			  <aiAimMode>AimedShot</aiAimMode>
+			</FireModes>
+			<weaponTags>
+			  <li>CE_Bow</li>
+			</weaponTags>
+		  </li>
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Ranged_Arbalest"]/description</xpath>
+			<value>
+			  <description>(2H) A massive crossbow made with advanced techniques and tempered steel arms for greater power and range. While similar in function to a crossbow, its massive draw weight means it must use a specialized mechanism to reload. However, due to it's larger size, it isn't usable with a shield.</description>
+			</value>
+		  </li>
+		  
+		  <!-- Smoothbore Musket -->
+		  <li Class="CombatExtended.PatchOperationMakeGunCECompatible">
+			<defName>MedTimes_Ranged_Musket</defName>
+			<statBases>
+			  <SightsEfficiency>0.8</SightsEfficiency>
+			  <ShotSpread>0.1</ShotSpread>
+			  <SwayFactor>1.92</SwayFactor>
+			  <Bulk>13.5</Bulk>
+			  <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+			</statBases>
+			<Properties>
+			  <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+			  <hasStandardCommand>true</hasStandardCommand>
+			  <defaultProjectile>Bullet_MusketBall</defaultProjectile>
+			  <warmupTime>3</warmupTime>
+			  <range>45</range>
+			  <soundCast>MedTimes_Sound_MusketFire</soundCast>
+			  <soundCastTail>GunTail_Medium</soundCastTail>
+			  <muzzleFlashScale>12</muzzleFlashScale>
+			</Properties>
+			<AmmoUser>
+			  <magazineSize>1</magazineSize>
+			  <reloadTime>10</reloadTime>
+			  <ammoSet>AmmoSet_MusketBall</ammoSet>
+			</AmmoUser>
+			<FireModes>
+			  <aiAimMode>AimedShot</aiAimMode>
+			</FireModes>
+			<weaponTags>
+			  <li>CE_AI_Rifle</li>
+			</weaponTags>
+		  </li>
+  
+		</operations>
+		</match>
+	</Operation>
 </Patch>
