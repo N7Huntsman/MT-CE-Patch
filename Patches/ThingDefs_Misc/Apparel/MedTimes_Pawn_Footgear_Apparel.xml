@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Medieval Times</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+
+		  <!--  Footgear Remove Mass  -->
+		  <li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Footgear"]/statBases/Mass</xpath>
+		  </li>
+		  
+		  <!-- Apparel Medieval - Socks Base -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Footgear_Socks"]/statBases</xpath>
+			<value>
+			  <Bulk>0.5</Bulk>
+			  <WornBulk>0.1</WornBulk>
+			  <Mass>0.1</Mass>
+			</value>
+		  </li>
+		  
+		  <!-- Foot Apparel Craftable Base Class (Tribal Boots) -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Craft_Footgear_Tier0"]</xpath>
+			<value>
+			  <statBases>
+				<Bulk>1</Bulk>
+				<WornBulk>0.75</WornBulk>
+				<Mass>1</Mass>
+			  </statBases>
+			</value>
+		  </li>
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Footgear_Tier0"]/statBases/StuffEffectMultiplierArmor</xpath>
+			<value>
+			  <StuffEffectMultiplierArmor>5</StuffEffectMultiplierArmor>
+			</value>
+		  </li>
+		  
+		  <!-- Tailored Foot Apparel Medieval Base Class (Tailored Boots) -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Tail_Footgear_Tier1"]</xpath>
+			<value>
+			  <statBases>
+				<Bulk>1</Bulk>
+				<WornBulk>0.5</WornBulk>
+				<Mass>1</Mass>
+			  </statBases>
+			</value>
+		  </li>
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Footgear_Tier1"]/statBases/StuffEffectMultiplierArmor</xpath>
+			<value>
+			  <StuffEffectMultiplierArmor>3</StuffEffectMultiplierArmor>
+			</value>
+		  </li>
+		  
+		</operations>
+		</match>
+	</Operation>
+</Patch>

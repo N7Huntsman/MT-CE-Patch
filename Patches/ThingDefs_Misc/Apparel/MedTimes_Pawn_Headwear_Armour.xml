@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Medieval Times</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+
+		<!-- ========== Tier 0 Class ========== -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T0_L"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+			</value>			
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T0_L"]/statBases/ArmorRating_Sharp</xpath>
+			<value>
+				<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+			</value>	
+		</li>			
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T0_L"]/statBases</xpath>
+			<value>
+				<Bulk>2</Bulk>
+				<WornBulk>1</WornBulk>
+				<Mass>2</Mass>
+			</value>
+		</li>
+		<!-- ========== Tier 1 Class (Light) ========== -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T1_L"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>1</ArmorRating_Blunt>
+			</value>			
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T1_L"]/statBases/ArmorRating_Sharp</xpath>
+			<value>
+				<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
+			</value>
+		</li>			
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T1_L"]/statBases</xpath>
+			<value>
+				<Bulk>2</Bulk>
+				<WornBulk>1</WornBulk>
+				<Mass>1</Mass>
+			</value>
+		</li>
+		<!-- ========== Tier 1 Class (Heavy) ========== -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T1_H"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+			</value>	
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T1_H"]/statBases/ArmorRating_Sharp</xpath>
+			<value>
+				<ArmorRating_Sharp>1</ArmorRating_Sharp>
+			</value>
+		</li>			
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T1_H"]/statBases</xpath>
+			<value>
+				<Bulk>3</Bulk>
+				<WornBulk>1.5</WornBulk>
+			</value>
+		</li>
+		<!-- ========== Tier 2 Class (Light) ========== -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T2_L"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>1.1</ArmorRating_Blunt>
+			</value>	
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T2_L"]/statBases/ArmorRating_Sharp</xpath>
+			<value>
+				<ArmorRating_Sharp>0.8</ArmorRating_Sharp>
+			</value>
+		</li>			
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T2_L"]/statBases</xpath>
+			<value>
+				<Bulk>3</Bulk>
+				<WornBulk>1</WornBulk>
+				<Mass>1.5</Mass>				
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Smith_Helm_T2_LX"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>1.2</ArmorRating_Blunt>
+			</value>	
+		</li>
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Smith_Helm_T2_LX"]/statBases</xpath>
+			<value>
+				<ArmorRating_Sharp>0.85</ArmorRating_Sharp>
+			</value>
+		</li>			
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Smith_Helm_T2_LX"]/statBases</xpath>
+			<value>
+				<Bulk>3</Bulk>
+				<WornBulk>1</WornBulk>
+				<Mass>1.5</Mass>				
+			</value>
+		</li>		
+		<!-- ========== Tier 2 Class (Heavy) ========== -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T2_H"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>1.4</ArmorRating_Blunt>
+			</value>	
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T2_H"]/statBases/ArmorRating_Sharp</xpath>
+			<value>
+				<ArmorRating_Sharp>1.2</ArmorRating_Sharp>
+			</value>
+		</li>			
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_T2_H"]/statBases</xpath>
+			<value>
+				<Bulk>5</Bulk>
+				<WornBulk>1</WornBulk>				
+			</value>
+		</li>
+
+		<!-- ========== Tier 2 Class (Exceptional) ========== -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Smith_Helm_T2_HX"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+			</value>	
+		</li>
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Smith_Helm_T2_HX"]/statBases</xpath>
+			<value>
+				<ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+			</value>
+		</li>			
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Smith_Helm_T2_HX"]/statBases</xpath>
+			<value>
+				<Bulk>5</Bulk>
+				<WornBulk>1</WornBulk>				
+			</value>
+		</li>
+
+		<!-- ========== Mass Stat Removal ========== -->
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_Rare"]/statBases/Mass</xpath>
+		</li>
+		
+		<!-- ========== Artifact - Helmets ========== -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_Art"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>1.75</ArmorRating_Blunt>
+			</value>	
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_Art"]/statBases/ArmorRating_Sharp</xpath>
+			<value>
+				<ArmorRating_Sharp>1.75</ArmorRating_Sharp>
+			</value>
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_Leg"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>2</ArmorRating_Blunt>
+			</value>	
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_Leg"]/statBases/ArmorRating_Sharp</xpath>
+			<value>
+				<ArmorRating_Sharp>2</ArmorRating_Sharp>
+			</value>
+		</li>		
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_Rare"]/statBases</xpath>
+			<value>
+				<Bulk>4</Bulk>
+				<WornBulk>1</WornBulk>
+				<Mass>3.5</Mass>
+			</value>
+		</li>
+		
+		<!-- ========== Nanite - Helmets ========== -->
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_Nan"]/statBases/ArmorRating_Blunt</xpath>
+			<value>
+				<ArmorRating_Blunt>1.5</ArmorRating_Blunt>
+			</value>	
+		</li>
+		<li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_Nan"]/statBases/ArmorRating_Sharp</xpath>
+			<value>
+				<ArmorRating_Sharp>1.5</ArmorRating_Sharp>
+			</value>
+		</li>	
+		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Helm_Nan"]/statBases</xpath>
+			<value>
+				<Bulk>5</Bulk>
+				<WornBulk>1</WornBulk>
+				<Mass>2</Mass>
+			</value>
+		</li>	
+	
+		</operations>
+		</match>
+	</Operation>
+</Patch>

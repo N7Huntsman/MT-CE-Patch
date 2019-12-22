@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Medieval Times</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+
+		  <!--  Headgear remove Mass  -->
+		  <li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Headgear"]/statBases/Mass</xpath>
+		  </li>
+		  
+		  <!-- Headgear Base Class -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Headgear"]/statBases</xpath>
+			<value>
+			  <Bulk>1</Bulk>
+			  <WornBulk>1</WornBulk>
+			  <Mass>1</Mass>
+			</value>
+		  </li>
+		  
+		  <!-- Arming Cap -->
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Headgear_ArmingCap"]/statBases/StuffEffectMultiplierArmor</xpath>
+			<value>
+			  <StuffEffectMultiplierArmor>8</StuffEffectMultiplierArmor>
+			</value>
+		  </li>
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Headgear_ArmingCap"]/statBases</xpath>
+			<value>
+			  <Bulk>1.5</Bulk>
+			</value>
+		  </li>
+		  
+		  <!-- Winter Cap -->
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[defName="MedTimes_Headgear_WinterHat"]/statBases/StuffEffectMultiplierArmor</xpath>
+			<value>
+			  <StuffEffectMultiplierArmor>2</StuffEffectMultiplierArmor>
+			</value>
+		  </li>
+
+		</operations>
+		</match>
+	</Operation>
+</Patch>

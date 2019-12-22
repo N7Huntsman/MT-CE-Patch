@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Patch>
+	<Operation Class="PatchOperationFindMod">
+    <mods>
+		<li>Medieval Times</li>
+    </mods>
+		<match Class="PatchOperationSequence">
+		<operations>
+
+		<!-- Apparel Medieval Base -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_ApparelBase"]/statBases</xpath>
+			<value>
+				<Bulk>1</Bulk>
+				<WornBulk>1</WornBulk>
+			</value>
+		  </li>
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_ApparelBase"]/statBases/Mass</xpath>
+			<value>
+				<Mass>1</Mass>
+			</value>
+		  </li>
+
+		<!-- Apparel Medieval - Tabard Base -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_ApparelTabard"]/statBases</xpath>
+			<value>		  
+				<Bulk>2</Bulk>
+				<WornBulk>1</WornBulk>
+				<Mass>1</Mass>
+			</value>
+		  </li>
+		  
+		  <!-- Apparel Medieval Base - Tier 1 (Trousers, Tunic) -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Apparel_Tier1"]/statBases</xpath>
+			<value>
+			  <Bulk>1</Bulk>
+			  <WornBulk>1</WornBulk>
+			  <Mass>1</Mass>
+			</value>
+		  </li>
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_Apparel_Tier1"]/statBases/StuffEffectMultiplierArmor</xpath>
+			<value>
+				<StuffEffectMultiplierArmor>1</StuffEffectMultiplierArmor>
+			</value>
+		  </li>
+		  
+		  <!-- Tailored Apparel Medieval - Jackets/Soft Armor (Padded Jacket, Gambison) -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_ApparelJacket"]/statBases</xpath>
+			<value>
+			  <Bulk>4</Bulk>
+			  <WornBulk>2</WornBulk>
+			  <Mass>1.5</Mass>
+			</value>
+		  </li>
+		  <li Class="PatchOperationReplace">
+			<xpath>/Defs/ThingDef[@Name="MedTimes_ApparelJacket"]/statBases/StuffEffectMultiplierArmor</xpath>
+			<value>
+				<StuffEffectMultiplierArmor>8</StuffEffectMultiplierArmor>
+			</value>
+		  </li>
+		  
+		  <!-- Medieval Cloak - Cold Apparel -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="MedTimes_ShellBody_Cloak"]/statBases</xpath>
+			<value>
+			  <Bulk>4</Bulk>
+			  <WornBulk>2</WornBulk>
+			  <Mass>2</Mass>
+			</value>
+		  </li>
+
+		  <!-- Medieval Cape - Hot Apparel -->
+		  <li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="MedTimes_ShellBody_Cape"]/statBases</xpath>
+			<value>
+			  <Bulk>3.5</Bulk>
+			  <WornBulk>1.5</WornBulk>
+			  <Mass>1.5</Mass>
+			</value>
+		  </li>
+
+		</operations>
+		</match>
+	</Operation>
+</Patch>
