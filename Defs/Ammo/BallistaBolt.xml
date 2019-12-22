@@ -22,7 +22,7 @@
    <ThingDef Name="AmmoBallistaBolt" ParentName="AmmoBaseMT" Abstract="True">
     <description>Heavy bolt designed to be fired from a medieval ballista.</description>
     <statBases>
-      <Mass>3.00</Mass>
+      <Mass>7.50</Mass>
       <Bulk>2.00</Bulk>
       <Flammability>1</Flammability>
     </statBases>
@@ -40,7 +40,7 @@
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>3.5</MarketValue>
+      <MarketValue>7.5</MarketValue>
     </statBases>
     <ammoClass>BallistaBolt</ammoClass>
   </ThingDef>
@@ -61,9 +61,10 @@
 		<defName>Projectile_BallistaBolt</defName>
 		<label>Ballista Bolt</label>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
-			<damageAmountBase>30</damageAmountBase>
-			<speed>65</speed>
-			<armorPenetrationBase>0.6</armorPenetrationBase>
+			<damageAmountBase>24</damageAmountBase>
+			<speed>14</speed>
+			  <armorPenetrationSharp>7</armorPenetrationSharp>
+			  <armorPenetrationBlunt>24.5</armorPenetrationBlunt>
 			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
 			<preExplosionSpawnThingDef>Ammo_BallistaBolt</preExplosionSpawnThingDef>
 		</projectile>
@@ -83,7 +84,7 @@
             <li>WoodLog</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>10</count>
       </li>
       <li>
         <filter>
@@ -91,7 +92,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>10</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
@@ -101,12 +102,16 @@
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Ammo_BallistaBolt>1</Ammo_BallistaBolt>
+      <Ammo_BallistaBolt>5</Ammo_BallistaBolt>
     </products>
+    	<workAmount>2500</workAmount>	
 		<recipeUsers>
-      <li>MedTimes_BlacksmithForge</li>
-	  <li>MedTimes_BlacksmithForgeTierTwo</li>
+		  <li>MedTimes_BlacksmithForge</li>
+		  <li>MedTimes_BlacksmithForgeTierTwo</li>
+          <li>FueledSmithy</li>
+	      <li>ElectricSmithy</li>		  
 		</recipeUsers>
+    <researchPrerequisite>MedTimes_MedievalDefenses</researchPrerequisite>		
   </RecipeDef>
 	
 </Defs>

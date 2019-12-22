@@ -21,10 +21,10 @@
 	<!-- ==================== Ammo ========================== -->
 
 	<ThingDef Class="CombatExtended.AmmoDef" Name="MusketBallBase" ParentName="SmallAmmoBase" Abstract="True">
-		<description>A .69 caliber projectile traditionally fired from a smooth-bore musket.</description>
+		<description>A .69 caliber projectile traditionally fired from a smoothbore .</description>
 		<statBases>
-		<Mass>0.05</Mass>
-		<Bulk>0.07</Bulk>
+		<Mass>0.03</Mass>
+		<Bulk>0.06</Bulk>
 		</statBases>
 	<tradeTags>
 		<li>CE_AutoEnableTrade</li>
@@ -42,7 +42,7 @@
 			<graphicClass>Graphic_StackCount</graphicClass>
 		</graphicData>
 		<statBases>
-			<MarketValue>0.05</MarketValue>
+			<MarketValue>0.01</MarketValue>
 		</statBases>
 		<ammoClass>RoundBall</ammoClass>
 	</ThingDef>
@@ -56,17 +56,18 @@
 		</graphicData>
 		<projectile>
 			<damageDef>Bullet</damageDef>
-			<speed>85</speed>
+			<speed>72</speed>
 		</projectile>
 	</ThingDef>
 
 	<ThingDef ParentName="MusketBallBullet">
 		<defName>Bullet_MusketBall</defName>
-		<label>Musket Ball</label>
+		<label>Lead Ball</label>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<damageDef>Bullet</damageDef>		
-			<damageAmountBase>35</damageAmountBase>
-			<armorPenetrationBase>0.4</armorPenetrationBase>
+			<damageAmountBase>19</damageAmountBase>		
+			<armorPenetrationSharp>7.2</armorPenetrationSharp>
+			<armorPenetrationBlunt>37.8</armorPenetrationBlunt>				
 		</projectile>
 	</ThingDef>
   
@@ -84,7 +85,7 @@
 						<li>Steel</li>
 					</thingDefs>
 				</filter>
-				<count>8</count>
+				<count>20</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>
@@ -95,7 +96,7 @@
 		<products>
 			<Ammo_MusketBall>500</Ammo_MusketBall>
 		</products>
-    	<workAmount>5500</workAmount>
+    	<workAmount>2000</workAmount>
         <recipeUsers>
           <li>FueledSmithy</li>
 	      <li>ElectricSmithy</li>

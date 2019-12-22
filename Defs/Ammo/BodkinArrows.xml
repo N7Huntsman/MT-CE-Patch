@@ -14,6 +14,7 @@
 		<defName>AmmoSet_BodkinArrows</defName>
 		<label>Bodkin Arrows</label>
 		<ammoTypes>
+			<Ammo_BroadheadArrows>Projectile_BroadheadArrow</Ammo_BroadheadArrows>		
 			<Ammo_BodkinArrows>Projectile_BodkinArrow</Ammo_BodkinArrows>
 			<Ammo_FlamingBodkinArrows>Projectile_FlamingBodkinArrow</Ammo_FlamingBodkinArrows>
 		</ammoTypes>
@@ -23,23 +24,37 @@
 
   <ThingDef Name="AmmoBodkinArrow" ParentName="AmmoBaseMT" Abstract="True">
     <statBases>
-      <Mass>0.2</Mass>
-      <Bulk>0.2</Bulk>
+      <Mass>0.11</Mass>
+      <Bulk>0.32</Bulk>
       <Flammability>1</Flammability>
     </statBases>
     <thingCategories>
       <li>AmmoBodkinArrows</li>
     </thingCategories>
-    <stackLimit>200</stackLimit>
+    <stackLimit>5000</stackLimit>
     <tradeTags>
       <li>CE_AutoEnableTrade</li>
     </tradeTags>
   </ThingDef>
 
   <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBodkinArrow">
+    <defName>Ammo_BroadheadArrows</defName>
+	<description>An arrow fixed with a broad, sharp metal head. While capable of inflicting deadly wounds through soft armor, it is less effective against targets wearing plate or thick mail.</description>
+    <label>Broadhead arrows</label>
+    <graphicData>
+      <texPath>Things/Ammo/BroadheadArrows</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.6</MarketValue>
+    </statBases>
+    <ammoClass>BroadheadArrow</ammoClass>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoBodkinArrow">
     <defName>Ammo_BodkinArrows</defName>
 	<description>The infamous bodkin arrow features a square-sectioned arrowhead specially designed to penetrate plate armor. Fired from the longbow, this arrow is deadly to even the most heavily armored targets.</description>
-    <label>Bodkin Arrows</label>
+    <label>Bodkin arrows</label>
     <graphicData>
       <texPath>Things/Ammo/BodkinArrows</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -52,8 +67,8 @@
 
   <ThingDef   Class="CombatExtended.AmmoDef" ParentName="AmmoBodkinArrow">
     <defName>Ammo_FlamingBodkinArrows</defName>
-    <description>The infamous bodkin arrow features a square-sectioned arrowhead specially designed to penetrate plate armor. This particular version has the bodkin arrowhead wrapped and tied with cloth, and dipped in quicklime pitch for flammability. At the cost of armor penetration and velocity, this projectile will ignite any hit target with flames, even if the arrow itself is deflected by armor.</description>
-    <label>Flaming Bodkin Arrows</label>
+    <description>An arrow equipped with a head wrapped in cloth that has been dipped in quicklime pitch, making for a potent incendiary weapon. The addition of the rag, adds drag to the projectile and blunts the impact, though flaming liquid can still splatter onto armored targets.</description>
+    <label>Flaming Arrows</label>
     <graphicData>
       <texPath>Things/Ammo/FlamingArrows</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -75,13 +90,28 @@
 	</ThingDef>
 
 	<ThingDef ParentName="BaseBodkinArrowProjectile">
-		<defName>Projectile_BodkinArrow</defName>
-		<label>Bodkin Arrow</label>
+		<defName>Projectile_BroadheadArrow</defName>
+		<label>broadhead arrow</label>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<damageDef>Arrow</damageDef>
-            <speed>52</speed>
+            <speed>33</speed>
 			<damageAmountBase>18</damageAmountBase>
-			<armorPenetrationBase>0.5</armorPenetrationBase>
+			<armorPenetrationBlunt>3.26</armorPenetrationBlunt>
+			<armorPenetrationSharp>0.8</armorPenetrationSharp>			
+			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
+			<preExplosionSpawnThingDef>Ammo_BroadheadArrows</preExplosionSpawnThingDef>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="BaseBodkinArrowProjectile">
+		<defName>Projectile_BodkinArrow</defName>
+		<label>bodkin arrow</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Arrow</damageDef>
+            <speed>33</speed>
+			<damageAmountBase>5</damageAmountBase>
+			<armorPenetrationBlunt>3.26</armorPenetrationBlunt>
+			<armorPenetrationSharp>3.7</armorPenetrationSharp>			
 			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
 			<preExplosionSpawnThingDef>Ammo_BodkinArrows</preExplosionSpawnThingDef>
 		</projectile>
@@ -89,24 +119,64 @@
 	
 	<ThingDef ParentName="BaseBodkinArrowProjectile">
 		<defName>Projectile_FlamingBodkinArrow</defName>
-		<label>Flaming Bodkin Arrow</label>
+		<label>flaming arrow</label>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 		  <damageDef>Flame</damageDef>
-          <speed>35</speed>
+          <speed>22</speed>
 		  <damageAmountBase>4</damageAmountBase>
 		  <secondaryDamage>
             <li>
               <def>Arrow</def>
-              <amount>14</amount>
+              <amount>4</amount>
             </li>
           </secondaryDamage>
-         <armorPenetrationBase>0.3</armorPenetrationBase>
+		  <armorPenetrationBlunt>3.26</armorPenetrationBlunt>
+		  <armorPenetrationSharp>0.2</armorPenetrationSharp>			
 		 <preExplosionSpawnChance>0.2</preExplosionSpawnChance>
 		 <preExplosionSpawnThingDef>Ammo_FlamingBodkinArrows</preExplosionSpawnThingDef>
         </projectile>
 	</ThingDef>
 
 	<!-- ==================== Recipes ========================== -->
+  <RecipeDef ParentName="AmmoRecipeMedievalBase">
+    <defName>MakeAmmo_BroadheadArrow</defName>
+    <label>make broadhead arrows x10</label>
+    <description>Craft 10 broadhead arrows.</description>
+    <jobString>Making broadhead arrows.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Steel</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+        <li>Steel</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_BroadheadArrows>10</Ammo_BroadheadArrows>
+    </products>
+    <workAmount>500</workAmount>	
+    <recipeUsers>
+      <li>MedTimes_BlacksmithForge</li>
+	  <li>MedTimes_BlacksmithForgeTierTwo</li>
+     </recipeUsers>
+  </RecipeDef>
+
 
   <RecipeDef ParentName="AmmoRecipeMedievalBase">
     <defName>MakeAmmo_BodkinArrow</defName>
@@ -140,6 +210,7 @@
     <products>
       <Ammo_BodkinArrows>10</Ammo_BodkinArrows>
     </products>
+    <workAmount>500</workAmount>	
     <recipeUsers>
       <li>MedTimes_BlacksmithForge</li>
 	  <li>MedTimes_BlacksmithForgeTierTwo</li>
@@ -176,6 +247,7 @@
         <li>MedTimes_Resource_Quicklime</li>
       </thingDefs>
     </fixedIngredientFilter>
+	<workAmount>800</workAmount>
     <products>
       <Ammo_FlamingBodkinArrows>10</Ammo_FlamingBodkinArrows>
     </products>

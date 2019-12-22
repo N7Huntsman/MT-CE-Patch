@@ -30,7 +30,7 @@
     <thingCategories>
       <li>AmmoCrossbowBolts</li>
     </thingCategories>
-    <stackLimit>200</stackLimit>
+    <stackLimit>500</stackLimit>
     <tradeTags>
       <li>CE_AutoEnableTrade</li>
     </tradeTags>
@@ -52,7 +52,7 @@
   
   <ThingDef Class="CombatExtended.AmmoDef" ParentName="AmmoCrossbowBolt">
     <defName>Ammo_FlamingBolts</defName>
-    <description>A bolt projectile designed to be fired from either a crossbow or an arbalest. This particular version has the head of the bolt wrapped and tied with cloth, and dipped in quicklime pitch for flammability. At the cost of armor penetration and velocity, this projectile will ignite any hit target with flames, even if the bolt itself is deflected by armor.</description>
+    <description>A bolt projectile designed to be fired from either a crossbow or an arbalest. This particular version has the head of the bolt wrapped and tied with cloth and dipped in quicklime pitch for flammability. At the cost of armor penetration and velocity, this projectile will ignite any hit target with flames, even if the bolt itself is deflected by armor.</description>
     <label>Flaming Bolts</label>
     <graphicData>
       <texPath>Things/Ammo/FlamingBolts</texPath>
@@ -78,9 +78,10 @@
 		<label>Bolt</label>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<damageDef>Arrow</damageDef>
-			<speed>65</speed>
-			<damageAmountBase>16</damageAmountBase>
-			<armorPenetrationBase>0.4</armorPenetrationBase>
+			<speed>14</speed>
+			<damageAmountBase>4</damageAmountBase>
+			<armorPenetrationBlunt>3.26</armorPenetrationBlunt>
+			<armorPenetrationSharp>4</armorPenetrationSharp>
 			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
 			<preExplosionSpawnThingDef>Ammo_CrossbowBolts</preExplosionSpawnThingDef>
 		</projectile>
@@ -91,15 +92,16 @@
 		<label>Flaming Bolt</label>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 		  <damageDef>Flame</damageDef>
-          <speed>40</speed>
+          <speed>14</speed>
 		  <damageAmountBase>4</damageAmountBase>
 		  <secondaryDamage>
             <li>
               <def>Arrow</def>
-              <amount>12</amount>
+              <amount>2</amount>
             </li>
           </secondaryDamage>
-         <armorPenetrationBase>0.25</armorPenetrationBase>
+		 <armorPenetrationBlunt>3.26</armorPenetrationBlunt>
+		 <armorPenetrationSharp>0.3</armorPenetrationSharp>
 		 <preExplosionSpawnChance>0.2</preExplosionSpawnChance>
 		 <preExplosionSpawnThingDef>Ammo_FlamingBolts</preExplosionSpawnThingDef>
         </projectile>
@@ -119,7 +121,7 @@
             <li>WoodLog</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>10</count>
       </li>
       <li>
         <filter>
@@ -127,7 +129,7 @@
             <li>Steel</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>10</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
@@ -139,6 +141,7 @@
     <products>
       <Ammo_CrossbowBolts>10</Ammo_CrossbowBolts>
     </products>
+    <workAmount>500</workAmount>	
     <recipeUsers>
       <li>MedTimes_BlacksmithForge</li>
 	  <li>MedTimes_BlacksmithForgeTierTwo</li>
@@ -177,6 +180,7 @@
     <products>
       <Ammo_FlamingBolts>10</Ammo_FlamingBolts>
     </products>
+    <workAmount>800</workAmount>	
 	<recipeUsers>
       <li>MedTimes_CraftingStation</li>	  
     </recipeUsers>

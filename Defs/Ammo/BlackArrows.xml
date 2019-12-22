@@ -79,9 +79,9 @@
 		<label>Black Arrow</label>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 			<damageDef>Arrow</damageDef>
-            <speed>56</speed>
-			<damageAmountBase>20</damageAmountBase>
-			<armorPenetrationBase>0.5</armorPenetrationBase>
+            <speed>13</speed>
+			<damageAmountBase>8</damageAmountBase>
+			<armorPenetrationBlunt>0.5</armorPenetrationBlunt>
 			<preExplosionSpawnChance>0.6</preExplosionSpawnChance>
 			<preExplosionSpawnThingDef>Ammo_BlackArrows</preExplosionSpawnThingDef>
 		</projectile>
@@ -92,7 +92,7 @@
 		<label>Flaming Black Arrow</label>
 		<projectile Class="CombatExtended.ProjectilePropertiesCE">
 		  <damageDef>Arrow</damageDef>
-          <speed>35</speed>
+          <speed>11</speed>
 		  <damageAmountBase>16</damageAmountBase>
 		  <secondaryDamage>
             <li>
@@ -140,6 +140,7 @@
     <products>
       <Ammo_BlackArrows>10</Ammo_BlackArrows>
     </products>
+	<workAmount>500</workAmount>
     <recipeUsers>
       <li>MedTimes_BlacksmithForge</li>
 	  <li>MedTimes_BlacksmithForgeTierTwo</li>
@@ -176,6 +177,7 @@
         <li>MedTimes_Resource_Quicklime</li>
       </thingDefs>
     </fixedIngredientFilter>
+    <workAmount>800</workAmount>	
     <products>
       <Ammo_FlamingBlackArrows>10</Ammo_FlamingBlackArrows>
     </products>
